@@ -21,11 +21,12 @@ function Home() {
           An intelligent resume builder that helps you craft standout resumes in minutes.
         </p>
         <div className="mt-8 flex justify-center gap-4">
-        <Link to="/sign-in">
-                    <Button className="bg-white text-white font-semibold hover:bg-gray-100 transition">
-                        Get Started
-                    </Button>
-                </Link>
+          <a
+            href="/dashboard"
+            className="px-8 py-3 bg-white text-black font-semibold rounded-md hover:bg-gray-100 transition"
+          >
+            Get Started
+          </a>
           <a
             href="#how-it-works"
             className="px-8 py-3 border border-white text-white rounded-md hover:bg-white hover:text-black transition"
