@@ -9,7 +9,8 @@ function Header() {
     return (
         <div className="w-full z-20 backdrop-blur-md bg-white/10 border-b border-white/20 text-white px-6 py-4 flex justify-between items-center shadow-md">
             <Link to="/">
-                <img src="/logo.svg" width={100} height={100} alt="Logo" className="hover:opacity-90 transition-opacity" />
+                {/* <img src="/logo.png" width={50} height={50} alt="Logo" className="hover:opacity-90 transition-opacity" /> */}
+                <h2>ResumeCraft</h2>
             </Link>
 
             {isSignedIn ? (
@@ -23,7 +24,7 @@ function Header() {
                 </div>
             ) : (
                 <Link to="/auth/sign-in">
-                    <Button className="bg-white text-black font-semibold hover:bg-gray-100 transition">
+                    <Button className="bg-white text-white font-semibold hover:bg-gray-100 transition">
                         Get Started
                     </Button>
                 </Link>
