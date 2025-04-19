@@ -15,13 +15,13 @@ function FormSection() {
   const { resumeId } = useParams()
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 p-4 sm:p-6 rounded-xl text-black dark:text-white">
+    <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white p-4 sm:p-6">
       {/* Top Controls */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
         {/* Left Side: Home + Theme Toggle */}
         <div className="flex gap-3">
           <Link to="/dashboard">
-            <Button className="bg-black text-white hover:bg-gray-800 transition">
+            <Button className="bg-black text-white hover:bg-gray-800 transition shadow">
               <Home className="w-4 h-4" />
             </Button>
           </Link>
@@ -33,7 +33,7 @@ function FormSection() {
           {activeFormIndex > 1 && (
             <Button
               size="sm"
-              className="bg-black text-white hover:bg-gray-800 transition"
+              className="bg-black text-white hover:bg-gray-800 transition shadow"
               onClick={() => setActiveFormIndex(activeFormIndex - 1)}
             >
               <ArrowLeft className="w-4 h-4" />
@@ -42,9 +42,9 @@ function FormSection() {
           <Button
             disabled={!enableNext}
             size="sm"
-            className={`flex gap-2 text-white font-medium transition ${
+            className={`flex items-center gap-2 px-4 py-2 text-white font-medium rounded shadow transition ${
               enableNext
-                ? 'bg-primary hover:bg-primary/90'
+                ? 'bg-pink-600 hover:bg-pink-700'
                 : 'bg-gray-500 cursor-not-allowed'
             }`}
             onClick={() => setActiveFormIndex(activeFormIndex + 1)}
@@ -55,7 +55,7 @@ function FormSection() {
       </div>
 
       {/* Form Content */}
-      <div className="mt-4">
+      <div>
         {activeFormIndex === 1 ? (
           <PersonalDetail enabledNext={(v) => setEnableNext(v)} />
         ) : activeFormIndex === 2 ? (
