@@ -21,7 +21,7 @@ function Home() {
           An intelligent resume builder that helps you craft standout resumes in minutes.
         </p>
         <div className="mt-8 flex justify-center gap-4">
-        <Link to="/auth/sign-in">
+        <Link to="/sign-in">
                     <Button className="bg-white text-white font-semibold hover:bg-gray-100 transition">
                         Get Started
                     </Button>
