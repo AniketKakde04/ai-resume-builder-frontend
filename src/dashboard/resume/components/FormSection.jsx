@@ -15,23 +15,25 @@ function FormSection() {
   const { resumeId } = useParams()
 
   return (
-    <div className="min-h-screen bg-white/10 backdrop-blur-lg p-4 sm:p-6 rounded-xl">
-      {/* Header Buttons */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-4">
+    <div className="min-h-screen bg-white dark:bg-gray-950 p-4 sm:p-6 rounded-xl text-black dark:text-white">
+      {/* Top Controls */}
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+        {/* Left Side: Home + Theme Toggle */}
         <div className="flex gap-3">
-          <Link to={'/dashboard'}>
-            <Button className="bg-gray-900 text-white hover:bg-gray-800 transition">
+          <Link to="/dashboard">
+            <Button className="bg-black text-white hover:bg-gray-800 transition">
               <Home className="w-4 h-4" />
             </Button>
           </Link>
           <ThemeColor />
         </div>
 
+        {/* Right Side: Navigation Buttons */}
         <div className="flex gap-2">
           {activeFormIndex > 1 && (
             <Button
               size="sm"
-              className="bg-gray-900 text-white hover:bg-gray-800"
+              className="bg-black text-white hover:bg-gray-800 transition"
               onClick={() => setActiveFormIndex(activeFormIndex - 1)}
             >
               <ArrowLeft className="w-4 h-4" />
@@ -39,10 +41,12 @@ function FormSection() {
           )}
           <Button
             disabled={!enableNext}
-            className={`flex gap-2 text-white ${
-              enableNext ? 'bg-primary hover:bg-primary/90' : 'bg-gray-400 cursor-not-allowed'
-            }`}
             size="sm"
+            className={`flex gap-2 text-white font-medium transition ${
+              enableNext
+                ? 'bg-primary hover:bg-primary/90'
+                : 'bg-gray-500 cursor-not-allowed'
+            }`}
             onClick={() => setActiveFormIndex(activeFormIndex + 1)}
           >
             Next <ArrowRight className="w-4 h-4" />
@@ -50,8 +54,8 @@ function FormSection() {
         </div>
       </div>
 
-      {/* Form Section */}
-      <div>
+      {/* Form Content */}
+      <div className="mt-4">
         {activeFormIndex === 1 ? (
           <PersonalDetail enabledNext={(v) => setEnableNext(v)} />
         ) : activeFormIndex === 2 ? (
