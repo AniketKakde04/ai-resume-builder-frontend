@@ -15,11 +15,14 @@ function Header() {
 
             {isSignedIn ? (
                 <div className="flex items-center gap-4">
-                    <Link to="/dashboard">
-                        <Button  className="bg-white text-white font-semibold hover:bg-gray-100 transition">
-                            Dashboard
-                        </Button>
-                    </Link>
+                    {/* <Link to="/dashboard"> */}
+                    <a
+            href="/dashboard"
+            className="px-8 py-3 bg-white text-black font-semibold rounded-md hover:bg-gray-100 transition"
+          >
+            Dashboard
+          </a>
+                    {/* </Link> */}
                     <UserButton />
                 </div>
             ) : (
