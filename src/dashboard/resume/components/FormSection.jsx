@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { ArrowLeft, ArrowRight, Home } from 'lucide-react'
-import { Link, Navigate, useParams } from 'react-router-dom'
-
 import PersonalDetail from './forms/PersonalDetail'
+import { ArrowLeft, ArrowRight, Home } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import { Link, Navigate, useParams } from 'react-router-dom'
 import Summary from './forms/Summary'
 import Skills from './forms/Skills'
 import ThemeColor from './ThemeColor'
@@ -18,43 +18,44 @@ function FormSection() {
     <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white p-4 sm:p-6">
       {/* Top Controls */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
-        {/* Left Side: Home + Theme */}
+        {/* Left Side: Home + Theme Toggle */}
         <div className="flex gap-3">
           <Link to="/dashboard">
-            <a className="px-4 py-2 bg-white text-black font-semibold rounded-md hover:bg-gray-100 transition flex items-center gap-2">
-              <Home className="w-4 h-4" /> Home
-            </a>
+            <Button className="bg-black text-white hover:bg-gray-800 transition shadow">
+              <Home className="w-4 h-4" />
+            </Button>
           </Link>
           <ThemeColor />
         </div>
 
-        {/* Right Side: Nav Buttons */}
+        {/* Right Side: Navigation Buttons */}
         <div className="flex gap-2">
           {activeFormIndex > 1 && (
-            <button
-              className="px-4 py-2 bg-white text-black font-semibold rounded-md hover:bg-gray-100 transition flex items-center gap-2"
+            <Button
+              size="sm"
+              className="bg-black text-white hover:bg-gray-800 transition shadow"
               onClick={() => setActiveFormIndex(activeFormIndex - 1)}
             >
-              <ArrowLeft className="w-4 h-4" /> Back
-            </button>
+              <ArrowLeft className="w-4 h-4" />
+            </Button>
           )}
-
-          <button
+          <Button
             disabled={!enableNext}
-            className={`px-4 py-2 rounded-md flex items-center gap-2 font-semibold transition ${
+            size="sm"
+            className={`flex items-center gap-2 px-4 py-2 text-white font-medium rounded shadow transition ${
               enableNext
-                ? 'bg-pink-600 text-white hover:bg-pink-700'
-                : 'bg-gray-400 text-white cursor-not-allowed'
+                ? 'bg-pink-600 hover:bg-pink-700'
+                : 'bg-gray-500 cursor-not-allowed'
             }`}
             onClick={() => setActiveFormIndex(activeFormIndex + 1)}
           >
             Next <ArrowRight className="w-4 h-4" />
-          </button>
+          </Button>
         </div>
       </div>
 
       {/* Form Content */}
-      <div className="mt-4">
+      <div>
         {activeFormIndex === 1 ? (
           <PersonalDetail enabledNext={(v) => setEnableNext(v)} />
         ) : activeFormIndex === 2 ? (

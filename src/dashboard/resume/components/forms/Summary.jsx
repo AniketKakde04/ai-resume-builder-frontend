@@ -76,16 +76,10 @@ function Summary({enabledNext}) {
             onChange={(e)=>setSummary(e.target.value)}
             />
             <div className='mt-2 flex justify-end'>
-            <Button
-  type="submit"
-  disabled={loading}
-  className={`px-4 py-2 rounded-md flex items-center gap-2 font-semibold transition ${
-    loading ? 'bg-gray-400 text-white cursor-not-allowed' : 'bg-pink-600 text-white hover:bg-pink-700'
-  }`}
->
-  {loading ? <LoaderCircle className='animate-spin' /> : 'Save'}
-</Button>
-
+            <Button type="submit"
+                disabled={loading}>
+                    {loading?<LoaderCircle className='animate-spin' />:'Save'}
+                    </Button>
             </div>
         </form>
         </div>

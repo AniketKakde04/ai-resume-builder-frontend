@@ -163,21 +163,14 @@ function Experience() {
                     ))}
                 </div>
                 <div className="flex justify-between">
-  <div className="gap-2 flex">
-    <Button className="bg-white text-black font-semibold rounded-md hover:bg-gray-100 transition" onClick={AddNewExperience}>+ Add More Experience</Button>
-    <Button className="bg-white text-black font-semibold rounded-md hover:bg-gray-100 transition" onClick={RemoveExperience}>- Remove</Button>
-  </div>
-  <Button
-    disabled={loading}
-    onClick={onSave}
-    className={`px-4 py-2 rounded-md flex items-center gap-2 font-semibold transition ${
-      loading ? 'bg-gray-400 text-white cursor-not-allowed' : 'bg-pink-600 text-white hover:bg-pink-700'
-    }`}
-  >
-    {loading ? <LoaderCircle className='animate-spin' /> : 'Save'}
-  </Button>
-</div>
-
+                    <div className='gap-2 flex'>
+                        <Button onClick={AddNewExperience}>+ Add More Experience</Button>
+                        <Button onClick={RemoveExperience}>- Remove</Button>
+                    </div>
+                    <Button disabled={loading} onClick={()=>onSave()}>
+            {loading?<LoaderCircle className='animate-spin' />:'Save'}    
+            </Button>
+                </div>
             </div>
         </div>
     );
