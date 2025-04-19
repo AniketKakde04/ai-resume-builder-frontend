@@ -60,9 +60,15 @@ function Summary({enabledNext}) {
         <form className='mt-7' onSubmit={onSave}>
             <div className='flex justify-between items-end'>
                 <label>Add Summary</label>
-                <Button variant="outline" onClick={()=>GenerateSummaryFromAI()} 
-                type="button" size="sm" className="border-primary text-white flex gap-2"> 
-                <Brain className='h-4 w-4' />  Generate from AI</Button>
+                <Button
+  type="button"
+  size="sm"
+  onClick={GenerateSummaryFromAI}
+  className="px-4 py-2 bg-white text-black font-semibold rounded-md hover:bg-gray-100 transition flex items-center gap-2"
+>
+  <Brain className='h-4 w-4' /> Generate from AI
+</Button>
+
             </div>
             <Textarea className="mt-5" required
             value={summary}
@@ -70,10 +76,16 @@ function Summary({enabledNext}) {
             onChange={(e)=>setSummary(e.target.value)}
             />
             <div className='mt-2 flex justify-end'>
-            <Button type="submit"
-                disabled={loading}>
-                    {loading?<LoaderCircle className='animate-spin' />:'Save'}
-                    </Button>
+            <Button
+  type="submit"
+  disabled={loading}
+  className={`px-4 py-2 rounded-md flex items-center gap-2 font-semibold transition ${
+    loading ? 'bg-gray-400 text-white cursor-not-allowed' : 'bg-pink-600 text-white hover:bg-pink-700'
+  }`}
+>
+  {loading ? <LoaderCircle className='animate-spin' /> : 'Save'}
+</Button>
+
             </div>
         </form>
         </div>

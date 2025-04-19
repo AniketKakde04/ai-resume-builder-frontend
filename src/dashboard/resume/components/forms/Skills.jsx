@@ -88,15 +88,21 @@ function Skills() {
         ))}
     </div>
     <div className='flex justify-between'>
-            <div className='flex gap-2'>
-            <Button variant="outline" onClick={AddNewSkills} className="text-white"> + Add More Skill</Button>
-            <Button variant="outline" onClick={RemoveSkills} className="text-white"> - Remove</Button>
+  <div className='flex gap-2'>
+    <Button className="bg-white text-black font-semibold rounded-md hover:bg-gray-100 transition" onClick={AddNewSkills}>+ Add More Skill</Button>
+    <Button className="bg-white text-black font-semibold rounded-md hover:bg-gray-100 transition" onClick={RemoveSkills}>- Remove</Button>
+  </div>
+  <Button
+    disabled={loading}
+    onClick={onSave}
+    className={`px-4 py-2 rounded-md flex items-center gap-2 font-semibold transition ${
+      loading ? 'bg-gray-400 text-white cursor-not-allowed' : 'bg-pink-600 text-white hover:bg-pink-700'
+    }`}
+  >
+    {loading ? <LoaderCircle className='animate-spin' /> : 'Save'}
+  </Button>
+</div>
 
-            </div>
-            <Button disabled={loading} onClick={()=>onSave()}>
-            {loading?<LoaderCircle className='animate-spin' />:'Save'}    
-            </Button>
-        </div>
     </div>
   )
 }
