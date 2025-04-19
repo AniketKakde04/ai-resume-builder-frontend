@@ -21,9 +21,9 @@ function FormSection() {
         {/* Left Side: Home + Theme */}
         <div className="flex gap-3">
           <Link to="/dashboard">
-            <button className="bg-black text-white px-3 py-2 rounded hover:bg-gray-800 transition flex items-center gap-2">
+            <a className="px-4 py-2 bg-white text-black font-semibold rounded-md hover:bg-gray-100 transition flex items-center gap-2">
               <Home className="w-4 h-4" /> Home
-            </button>
+            </a>
           </Link>
           <ThemeColor />
         </div>
@@ -32,25 +32,23 @@ function FormSection() {
         <div className="flex gap-2">
           {activeFormIndex > 1 && (
             <button
-              className="bg-black text-white px-4 py-2 rounded hover:bg-gray-800 transition flex items-center gap-2"
+              className="px-4 py-2 bg-white text-black font-semibold rounded-md hover:bg-gray-100 transition flex items-center gap-2"
               onClick={() => setActiveFormIndex(activeFormIndex - 1)}
             >
-              <ArrowLeft className="w-4 h-4" />
-              Back
+              <ArrowLeft className="w-4 h-4" /> Back
             </button>
           )}
 
           <button
             disabled={!enableNext}
-            className={`px-4 py-2 rounded flex items-center gap-2 font-medium transition ${
+            className={`px-4 py-2 rounded-md flex items-center gap-2 font-semibold transition ${
               enableNext
                 ? 'bg-pink-600 text-white hover:bg-pink-700'
                 : 'bg-gray-400 text-white cursor-not-allowed'
             }`}
             onClick={() => setActiveFormIndex(activeFormIndex + 1)}
           >
-            Next
-            <ArrowRight className="w-4 h-4" />
+            Next <ArrowRight className="w-4 h-4" />
           </button>
         </div>
       </div>
