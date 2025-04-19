@@ -16,7 +16,7 @@ function Header() {
             {isSignedIn ? (
                 <div className="flex items-center gap-4">
                     <Link to="/dashboard">
-                        <Button  className="border-white/20 bg-white/10 text-white hover:bg-white hover:text-black transition">
+                        <Button  className="bg-white text-white font-semibold hover:bg-gray-100 transition">
                             Dashboard
                         </Button>
                     </Link>
