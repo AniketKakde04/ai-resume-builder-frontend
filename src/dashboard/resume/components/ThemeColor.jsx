@@ -45,7 +45,7 @@ function ThemeColor() {
             <PopoverTrigger asChild>
                 <Button
                     size="sm"
-                    className="flex gap-2 text-white bg-black"
+                    className="flex gap-2 text-white bg-black hover:bg-gray-800 active:bg-gray-900 focus:ring-2 focus:ring-gray-500"
                 >
                     <LayoutGrid /> Theme
                 </Button>
