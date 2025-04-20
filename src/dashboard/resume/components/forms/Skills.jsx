@@ -89,11 +89,11 @@ function Skills() {
     </div>
     <div className='flex justify-between'>
             <div className='flex gap-2'>
-            <Button variant="outline" onClick={AddNewSkills} className="themeColor"> + Add More Skill</Button>
-            <Button variant="outline" onClick={RemoveSkills} className="themeColor"> - Remove</Button>
+            <Button variant="outline" onClick={AddNewSkills} className="theme-button"> + Add More Skill</Button>
+            <Button variant="outline" onClick={RemoveSkills} className="theme-button"> - Remove</Button>
 
             </div>
-            <Button className="themeColor" disabled={loading} onClick={()=>onSave()}>
+            <Button className="theme-button" disabled={loading} onClick={()=>onSave()}>
             {loading?<LoaderCircle className='animate-spin' />:'Save'}    
             </Button>
         </div>

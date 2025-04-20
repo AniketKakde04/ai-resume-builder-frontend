@@ -64,9 +64,9 @@ function Summary({enabledNext}) {
   type="button"
   size="sm"
   onClick={GenerateSummaryFromAI}
-   className="themeColor"
+   className="theme-button"
 >
-  {/* <Brain className='h-4 w-4'  /> Generate from AI */}
+  <Brain className='h-4 w-4'  /> Generate from AI
 </Button>
 
             </div>
@@ -77,7 +77,7 @@ function Summary({enabledNext}) {
             />
             <div className='mt-2 flex justify-end'>
             <Button type="submit"
-            className="themeColor"
+            className="theme-button"
                 disabled={loading}>
                     {loading?<LoaderCircle className='animate-spin' />:'Save'}
                     </Button>

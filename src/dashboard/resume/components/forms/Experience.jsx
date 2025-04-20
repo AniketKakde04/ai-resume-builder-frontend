@@ -164,10 +164,10 @@ function Experience() {
                 </div>
                 <div className="flex justify-between">
                     <div className='gap-2 flex'>
-                        <Button className="themeColor" onClick={AddNewExperience}>+ Add More Experience</Button>
-                        <Button className="themeColor" onClick={RemoveExperience}>- Remove</Button>
+                        <Button className="theme-button" onClick={AddNewExperience}>+ Add More Experience</Button>
+                        <Button className="theme-button" onClick={RemoveExperience}>- Remove</Button>
                     </div>
-                    <Button className="themeColor" disabled={loading} onClick={()=>onSave()}>
+                    <Button className="theme-button" disabled={loading} onClick={()=>onSave()}>
             {loading?<LoaderCircle className='animate-spin' />:'Save'}    
             </Button>
                 </div>
