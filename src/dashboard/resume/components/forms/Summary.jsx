@@ -66,7 +66,7 @@ function Summary({enabledNext}) {
   onClick={GenerateSummaryFromAI}
    className="themeColor"
 >
-  <Brain className='h-4 w-4' /> Generate from AI
+  {/* <Brain className='h-4 w-4'  /> Generate from AI */}
 </Button>
 
             </div>
