@@ -35,16 +35,7 @@ function ViewResume() {
             <h2 className='text-center text-2xl font-medium'>Congratulations! Your AI generated resume is ready</h2>
             <p className='text-center text-gray-400'>Now you are ready to download resume and you can share unique url with your friends</p>
             <div className='flex justify-between px-44 my-10'>
-                <Button onClick={HandleDownload}>Download</Button>
-                <RWebShare
-        data={{
-          text: "Hello Everyone, This is my resume please open url to see",
-          url: import.meta.env.VITE_APP_URL+"/my-resume/"+resumeId+"/view",
-          title: resumeInfo?.firstName+" "+resumeInfo?.lastName+" Resume",
-        }}
-        onClick={() => console.log("shared successfully!")}
-      ><Button>Share</Button>
-            </RWebShare>
+                <Button onClick={HandleDownload} className="theme-button">Download</Button>
 
             </div>
             </div>
