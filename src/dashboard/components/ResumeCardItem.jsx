@@ -52,8 +52,8 @@ function ResumeCardItem({ resume, refreshData }) {
         <h2 className="text-sm font-semibold truncate">{resume.title}</h2>
 
         <DropdownMenu>
-          <DropdownMenuTrigger>
-            <MoreVertical className="h-4 w-4 cursor-pointer theme-button" />
+          <DropdownMenuTrigger className="theme-button">
+            <MoreVertical className="h-4 w-4 cursor-pointer" />
           </DropdownMenuTrigger>
           <DropdownMenuContent className="bg-white/10 backdrop-blur-md border border-white/20 text-white">
             <DropdownMenuItem onClick={() => navigation(`/dashboard/resume/${resume.documentId}/edit`)}>
