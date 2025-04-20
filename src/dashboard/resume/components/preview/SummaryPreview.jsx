@@ -1,10 +1,12 @@
 import React from 'react'
 
-function SummaryPreview({resumeInfo}) {
+function SummaryPreview({ resumeInfo }) {
   return (
-    <p className='text-xs'>
-{resumeInfo?.summary}
-    </p>
+    <div className="px-2 sm:px-4">
+      <p className='text-xs leading-relaxed'>
+        {resumeInfo?.summary}
+      </p>
+    </div>
   )
 }
 

@@ -1,26 +1,29 @@
 import React from 'react'
 
-function EducationalPreview({resumeInfo}) {
+function EducationalPreview({ resumeInfo }) {
   return (
-    <div className='my-6'>
-    <h2 className='text-center font-bold text-sm mb-2' 
-    style={{color:resumeInfo?.themeColor}}>Education</h2>
-<hr style={{borderColor:resumeInfo?.themeColor}}/>
+    <div className='my-6 px-2 sm:px-4'>
+      <h2 className='text-center font-bold text-sm mb-2'
+        style={{ color: resumeInfo?.themeColor }}>
+        Education
+      </h2>
+      <hr style={{ borderColor: resumeInfo?.themeColor }} />
 
-    {resumeInfo?.education.map((education,index)=>(
+      {resumeInfo?.education.map((education, index) => (
         <div key={index} className='my-5'>
-            <h2 className='text-sm font-bold'
-                style={{color:resumeInfo?.themeColor}}
-            >{education?.universityName}</h2>
-            <h2 className='text-xs flex justify-between'>{education?.degree} {education.major}
-                <span>{education?.startDate} - {education?.endDate}</span>
-            </h2>
-            <p className='text-xs my-2'>
-                {education?.description}
-            </p>
+          <h2 className='text-sm font-bold'
+            style={{ color: resumeInfo?.themeColor }}>
+            {education?.universityName}
+          </h2>
+          <h2 className='text-xs flex flex-col sm:flex-row justify-between'>
+            <span>{education?.degree} {education.major}</span>
+            <span>{education?.startDate} - {education?.endDate}</span>
+          </h2>
+          <p className='text-xs my-2 leading-relaxed'>
+            {education?.description}
+          </p>
         </div>
-    ))}
-
+      ))}
     </div>
   )
 }
