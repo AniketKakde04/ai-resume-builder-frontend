@@ -9,7 +9,13 @@ import RichTextEditor from '../RichTextEditor'
 import { ResumeInfoContext } from '@/context/ResumeInfoContext'
 
 const formField = {
-  title: '', companyName: '', city: '', state: '', startDate: '', endDate: '', workSummary: ''
+  title: '',
+  companyName: '',
+  city: '',
+  state: '',
+  startDate: '',
+  endDate: '',
+  workSummary: ''
 }
 
 function Experience() {
@@ -52,12 +58,14 @@ function Experience() {
         experience: experienceList.map(({ id, ...rest }) => rest)
       }
     }
-    GlobalApi.UpdateResumeDetail(params?.resumeId, data).then(res => {
-      setLoading(false)
-      toast('Details updated!')
-    }).catch(() => {
-      setLoading(false)
-    })
+    GlobalApi.UpdateResumeDetail(params?.resumeId, data)
+      .then(() => {
+        setLoading(false)
+        toast('Details updated!')
+      })
+      .catch(() => {
+        setLoading(false)
+      })
   }
 
   useEffect(() => {
@@ -68,6 +76,7 @@ function Experience() {
     <div className="p-5 shadow-lg rounded-lg border-t-primary border-t-4 mt-10">
       <h2 className="font-bold text-lg">Professional Experience</h2>
       <p>Add your previous job experience</p>
+
       {experienceList.map((item, index) => (
         <div key={index} className="grid grid-cols-1 sm:grid-cols-2 gap-4 border p-3 my-5 rounded-lg">
           <div>
@@ -106,8 +115,9 @@ function Experience() {
           </div>
         </div>
       ))}
+
       <div className="flex flex-col sm:flex-row justify-between gap-4 mt-4">
-        <div className="flex gap-2">
+        <div className="flex gap-2 flex-wrap">
           <Button className="theme-button" onClick={AddNewExperience}>+ Add More Experience</Button>
           <Button className="theme-button" onClick={RemoveExperience}>- Remove</Button>
         </div>

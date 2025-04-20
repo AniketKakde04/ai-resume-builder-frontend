@@ -65,7 +65,7 @@ function Education() {
 
       {educationalList.map((item, index) => (
         <div key={index} className="grid grid-cols-1 sm:grid-cols-2 gap-4 border p-3 my-5 rounded-lg">
-          <div className="sm:col-span-2">
+          <div className="col-span-1 sm:col-span-2">
             <label>University Name</label>
             <Input name="universityName" className="w-full" onChange={(e) => handleChange(e, index)} defaultValue={item.universityName} />
           </div>
@@ -85,7 +85,7 @@ function Education() {
             <label>End Date</label>
             <Input type="date" name="endDate" className="w-full" onChange={(e) => handleChange(e, index)} defaultValue={item.endDate} />
           </div>
-          <div className="sm:col-span-2">
+          <div className="col-span-1 sm:col-span-2">
             <label>Description</label>
             <Textarea name="description" className="w-full" onChange={(e) => handleChange(e, index)} defaultValue={item.description} />
           </div>
@@ -93,7 +93,7 @@ function Education() {
       ))}
 
       <div className="flex flex-col sm:flex-row justify-between gap-4">
-        <div className="flex gap-2">
+        <div className="flex gap-2 flex-wrap">
           <Button variant="outline" onClick={AddNewEducation} className="theme-button">+ Add More</Button>
           <Button variant="outline" onClick={RemoveEducation} className="theme-button">- Remove</Button>
         </div>

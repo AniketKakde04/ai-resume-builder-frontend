@@ -60,19 +60,36 @@ function Skills() {
       <p>Add your top professional key skills</p>
 
       {skillsList.map((item, index) => (
-        <div key={index} className="flex flex-col sm:flex-row justify-between items-center mb-4 border rounded-lg p-3 gap-4">
+        <div
+          key={index}
+          className="flex flex-col sm:flex-row justify-between items-center mb-4 border rounded-lg p-3 gap-4"
+        >
           <div className="w-full sm:w-2/3">
             <label className="text-xs">Name</label>
-            <Input className="w-full" defaultValue={item.name} onChange={(e) => handleChange(index, 'name', e.target.value)} />
+            <Input
+              className="w-full"
+              defaultValue={item.name}
+              onChange={(e) => handleChange(index, 'name', e.target.value)}
+            />
           </div>
-          <Rating style={{ maxWidth: 120 }} value={item.rating || 0} onChange={(v) => handleChange(index, 'rating', v)} />
+          <div className="flex-shrink-0">
+            <Rating
+              style={{ maxWidth: 120 }}
+              value={item.rating || 0}
+              onChange={(v) => handleChange(index, 'rating', v)}
+            />
+          </div>
         </div>
       ))}
 
       <div className="flex flex-col sm:flex-row justify-between gap-4">
-        <div className="flex gap-2">
-          <Button variant="outline" onClick={AddNewSkills} className="theme-button">+ Add Skill</Button>
-          <Button variant="outline" onClick={RemoveSkills} className="theme-button">- Remove</Button>
+        <div className="flex gap-2 flex-wrap">
+          <Button variant="outline" onClick={AddNewSkills} className="theme-button">
+            + Add Skill
+          </Button>
+          <Button variant="outline" onClick={RemoveSkills} className="theme-button">
+            - Remove
+          </Button>
         </div>
         <Button className="theme-button" disabled={loading} onClick={onSave}>
           {loading ? <LoaderCircle className="animate-spin" /> : 'Save'}
