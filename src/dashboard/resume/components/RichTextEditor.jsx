@@ -60,7 +60,7 @@ function RichTextEditor({onRichTextEditorChange,index,defaultValue}) {
         <label className='text-xs'>Summary</label>
         <Button onClick={GenerateSummaryFromAI}  
         
-        className="flex gap-2 border-primary text-white">
+        className="theme-button">
           {loading?
             <LoaderCircle className='animate-spin'/>:
             <>
