@@ -21,7 +21,7 @@ function FormSection() {
         {/* Left Side: Home + Theme Toggle */}
         <div className="flex gap-3">
           <Link to="/dashboard">
-            <Button className="bg-black text-white hover:bg-gray-800 transition shadow">
+            <Button className="theme-button" >
               <Home className="w-4 h-4" />
             </Button>
           </Link>
@@ -33,7 +33,8 @@ function FormSection() {
           {activeFormIndex > 1 && (
             <Button
               size="sm"
-              className="bg-black text-white hover:bg-gray-800 transition shadow"
+               className="theme-button"
+              
               onClick={() => setActiveFormIndex(activeFormIndex - 1)}
             >
               <ArrowLeft className="w-4 h-4" />
@@ -42,7 +43,8 @@ function FormSection() {
           <Button
             disabled={!enableNext}
             size="sm"
-            className={`flex items-center gap-2 px-4 py-2 text-white font-medium rounded shadow transition ${
+            
+            className={`theme-button ${
               enableNext
                 ? 'bg-pink-600 hover:bg-pink-700'
                 : 'bg-gray-500 cursor-not-allowed'
@@ -75,3 +77,5 @@ function FormSection() {
 }
 
 export default FormSection
+// className="bg-black text-white hover:bg-gray-800 transition shadow"
+// className="bg-black text-white hover:bg-gray-800 transition shadow"
