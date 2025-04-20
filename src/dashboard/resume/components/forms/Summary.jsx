@@ -64,7 +64,7 @@ function Summary({enabledNext}) {
   type="button"
   size="sm"
   onClick={GenerateSummaryFromAI}
-  className="px-4 py-2 bg-white text-black font-semibold rounded-md hover:bg-gray-100 transition flex items-center gap-2"
+   className="themeColor"
 >
   <Brain className='h-4 w-4' /> Generate from AI
 </Button>
