@@ -34,7 +34,7 @@ function ViewResume() {
         <div className='my-10 mx-10 md:mx-20 lg:ms-36'>
             <h2 className='text-center text-2xl font-medium'>Congratulations! Your AI generated resume is ready</h2>
             <p className='text-center text-gray-400'>Now you are ready to download resume and you can share unique url with your friends</p>
-            <div className='flex justify-between px-44 my-10'>
+            <div className='flex justify-center px-44 my-10'>
                 <Button onClick={HandleDownload} className="theme-button">Download</Button>
 
             </div>
