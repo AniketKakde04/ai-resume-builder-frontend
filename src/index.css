@@ -94,6 +94,30 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
+.theme-button {
+  background-color: #1a202c; /* Dark background */
+  color: #ffffff; /* White text */
+  border: 1px solid #4a5568; /* Gray border */
+  transition: all 0.3s ease;
+}
+
+.theme-button:hover {
+  background-color: #2d3748; /* Slightly lighter background on hover */
+  color: #e2e8f0; /* Lighter text on hover */
+  border-color: #718096; /* Lighter border on hover */
+}
+
+.theme-button:active {
+  background-color: #4a5568; /* Even lighter background on active */
+  color: #cbd5e0; /* Even lighter text on active */
+  border-color: #a0aec0; /* Even lighter border on active */
+}
+
+.theme-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.6); /* Blue focus ring */
+}
+
 a {
   font-weight: 500;
   color: #646cff;
