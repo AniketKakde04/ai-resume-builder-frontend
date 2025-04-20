@@ -93,6 +93,7 @@ function PersonalDetail({enabledNext}) {
             </div>
             <div className='mt-3 flex justify-end'>
                <Button type="submit"
+               className="theme-button"
                 disabled={loading}>
                     {loading?<LoaderCircle className='animate-spin' />:'Save'}
                     </Button>

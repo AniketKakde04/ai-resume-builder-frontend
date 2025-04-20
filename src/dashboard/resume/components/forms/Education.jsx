@@ -129,11 +129,11 @@ function Education() {
     </div>
     <div className='flex justify-between'>
             <div className='flex gap-2'>
-            <Button variant="outline" onClick={AddNewEducation} className="text-white"> + Add More Education</Button>
-            <Button variant="outline" onClick={RemoveEducation} className="text-white"> - Remove</Button>
+            <Button variant="outline" onClick={AddNewEducation} className="themeColor"> + Add More Education</Button>
+            <Button variant="outline" onClick={RemoveEducation} className="themeColor"> - Remove</Button>
 
             </div>
-            <Button disabled={loading} onClick={()=>onSave()}>
+            <Button className="themeColor" disabled={loading} onClick={()=>onSave()}>
             {loading?<LoaderCircle className='animate-spin' />:'Save'}    
             </Button>
         </div>

@@ -77,6 +77,7 @@ function Summary({enabledNext}) {
             />
             <div className='mt-2 flex justify-end'>
             <Button type="submit"
+            className="themeColor"
                 disabled={loading}>
                     {loading?<LoaderCircle className='animate-spin' />:'Save'}
                     </Button>
