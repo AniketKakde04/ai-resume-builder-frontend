@@ -13,12 +13,17 @@ function SkillsPreview({ resumeInfo }) {
         {resumeInfo?.skills.map((skill, index) => (
           <div key={index} className='flex items-center gap-1'>
             <h2 className='text-xs min-w-[80px]'>{skill.name}</h2>
-            <div className='h-2 bg-gray-200 w-full rounded-full max-w-[120px]'>
+            <div
+              className='h-2 bg-gray-200 w-full rounded-full max-w-[120px] print:bg-gray-200'
+              style={{
+                position: 'relative', // Ensure the inner bar is positioned correctly
+              }}
+            >
               <div
-                className='h-2 rounded-full'
+                className='h-2 rounded-full print:h-2'
                 style={{
-                  backgroundColor: resumeInfo?.themeColor,
-                  width: `${Math.min(skill?.rating * 20, 100)}%`
+                  backgroundColor: resumeInfo?.themeColor || '#000', // Fallback color for print
+                  width: `${Math.min(skill?.rating * 20, 100)}%`,
                 }}
               />
             </div>
