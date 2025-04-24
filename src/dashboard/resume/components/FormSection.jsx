@@ -64,14 +64,16 @@ function FormSection() {
         ) : activeFormIndex === 2 ? (
           <Summary enabledNext={(v) => setEnableNext(v)} />
         ) : activeFormIndex === 3 ? (
-          <Experience />
-        ) : activeFormIndex === 4 ? (
           <Education />
+        ) : activeFormIndex === 4 ? (
+          <Experience />
         ) : activeFormIndex === 5 ? (
           <Projects />
         ) : activeFormIndex === 6 ? (
           <Skills />
-        ) : activeFormIndex === 7 ? (
+        ): activeFormIndex === 7 ? (
+          <Achievements />
+        ) : activeFormIndex === 8 ? (
           <Navigate to={`/my-resume/${resumeId}/view`} />
         ) : null}
       </div>
