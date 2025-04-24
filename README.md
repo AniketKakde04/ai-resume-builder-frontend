@@ -1,6 +1,7 @@
 # 🧠 AI Resume Builder
 
 A modern, AI-powered resume builder ,designed to help users create professional, ATS-optimized resumes in minutes. Integrates smart resume generation, real-time editing.
+
 ---
 
 ## ✨ Features
