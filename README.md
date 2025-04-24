@@ -10,19 +10,17 @@ A modern, AI-powered resume builder built with **React**, **Vite**, and **TypeSc
 - 📥 Download Resume (PDF)  
 - 📝 Real-Time Preview and Editing  
 - 🌈 Multiple Theme Colors  
-- 🎨 Multiple Resume Templates *(Coming soon)*  
-- 🔍 AI-Powered Resume Suggestions *(Coming soon)*  
+- 🔍 AI-Powered Resume Suggestions 
 
 ---
 
 ## 🔮 Planned Features
 
 - 💼 Job Tracker Dashboard  
-- 🧠 AI Resume Generator *(OpenAI / Gemini Integration)*  
+- 🎨 Multiple Resume Templates
 - 🌐 Multi-language Support  
 - 🎯 Resume Scoring and Feedback  
 - 💬 Tone Customization  
-- 📊 Resume Heatmaps  
 
 ---
 
@@ -42,7 +40,44 @@ A modern, AI-powered resume builder built with **React**, **Vite**, and **TypeSc
 git clone https://github.com/AniketKakde04/ai-resume-builder-frontend.git
 cd ai-resume-builder-frontend
 ```
+
+### 2. Install Dependencies
+```bash
+npm install
+# or
+yarn install
+```
+
+### 3. Run the App
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+### 🛠 Tech Stack
+React
+Vite
+TypeScript
+Tailwind CSS
+Postgres SQL
+Gemini API
+Strapi Backend
+Vercel (Deployment) and Render (Backend Deployment)
+
+### 🤝 Contributing
+Contributions, issues, and feature requests are welcome!
+-Fork the repo
+-Create a new branch (git checkout -b feature/YourFeature)
+-Commit your changes (git commit -m 'Add Feature')
+-Push to the branch (git push origin feature/YourFeature)
+-Open a pull request
+
+### 📄License
+This project is licensed under the MIT License.
+
+
+
 ### 🌐 Live Demo
-- Deployed on Vercel
-- (https://ai-resume-builder-frontend-xml4-bvhr9ob8l.vercel.app/)
+- Deployed on Vercel : (https://ai-resume-builder-frontend-xml4-bvhr9ob8l.vercel.app/)
 
