@@ -8,6 +8,7 @@ import Skills from './forms/Skills'
 import ThemeColor from './ThemeColor'
 import Experience from './forms/Experience'
 import Education from './forms/Education'
+import Projects from './forms/Projects'
 
 function FormSection() {
   const [activeFormIndex, setActiveFormIndex] = useState(1)
@@ -67,8 +68,10 @@ function FormSection() {
         ) : activeFormIndex === 4 ? (
           <Education />
         ) : activeFormIndex === 5 ? (
-          <Skills />
+          <Projects />
         ) : activeFormIndex === 6 ? (
+          <Skills />
+        ) : activeFormIndex === 7 ? (
           <Navigate to={`/my-resume/${resumeId}/view`} />
         ) : null}
       </div>

@@ -5,6 +5,7 @@ import SummaryPreview from './preview/SummaryPreview'
 import ExperiencePreview from './preview/ExperiencePreview'
 import EducationalPreview from './preview/EducationalPreview'
 import SkillsPreview from './preview/SkillsPreview'
+import ProjectPreview from './preview/ProjectPreview' // Import ProjectPreview
 
 function ResumePreview() {
 
@@ -45,6 +46,13 @@ function ResumePreview() {
                     <EducationalPreview resumeInfo={resumeInfo} />
                 </div>
             )}
+            
+             {/* Projects */}
+             {resumeInfo?.projects?.length > 0 && (
+                <div className="mb-6">
+                    <ProjectPreview resumeInfo={resumeInfo} />
+                </div>
+            )}
 
             {/* Skills */}
             {resumeInfo?.skills?.length > 0 && (
@@ -52,6 +60,8 @@ function ResumePreview() {
                     <SkillsPreview resumeInfo={resumeInfo} />
                 </div>
             )}
+
+           
         </div>
     )
 }
