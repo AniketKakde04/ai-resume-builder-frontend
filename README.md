@@ -79,5 +79,5 @@ This project is licensed under the MIT License.
 
 
 ### 🌐 Live Demo
-- Deployed on Vercel : (https://ai-resume-builder-frontend-xml4-bvhr9ob8l.vercel.app/)
+- Deployed on Vercel : https://ai-resume-builder-frontend-xml4.vercel.app/
 
