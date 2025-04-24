@@ -56,14 +56,14 @@ yarn dev
 ```
 
 ### 🛠 Tech Stack
-React
-Vite
-TypeScript
-Tailwind CSS
-Postgres SQL
-Gemini API
-Strapi Backend
-Vercel (Deployment) and Render (Backend Deployment)
+-React
+-Vite
+-TypeScript
+-Tailwind CSS
+-Postgres SQL
+-Gemini API
+-Strapi Backend
+-Vercel (Deployment) and Render (Backend Deployment)
 
 ### 🤝 Contributing
 Contributions, issues, and feature requests are welcome!
