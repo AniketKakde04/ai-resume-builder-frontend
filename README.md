@@ -1,7 +1,6 @@
 # 🧠 AI Resume Builder
 
-A modern, AI-powered resume builder built with **React**, **Vite**, and **TypeScript**, designed to help users create professional, ATS-optimized resumes in minutes. Integrates smart resume generation, real-time editing, and customizable templates.
-
+A modern, AI-powered resume builder ,designed to help users create professional, ATS-optimized resumes in minutes. Integrates smart resume generation, real-time editing.
 ---
 
 ## ✨ Features
