@@ -56,22 +56,22 @@ yarn dev
 ```
 
 ### 🛠 Tech Stack
--React
--Vite
--TypeScript
--Tailwind CSS
--Postgres SQL
--Gemini API
--Strapi Backend
--Vercel (Deployment) and Render (Backend Deployment)
+- React
+- Vite
+- TypeScript
+- Tailwind CSS
+- Postgres SQL
+- Gemini API
+- Strapi Backend
+- Vercel (Deployment) and Render (Backend Deployment)
 
 ### 🤝 Contributing
 Contributions, issues, and feature requests are welcome!
--Fork the repo
--Create a new branch (git checkout -b feature/YourFeature)
--Commit your changes (git commit -m 'Add Feature')
--Push to the branch (git push origin feature/YourFeature)
--Open a pull request
+- Fork the repo
+- Create a new branch (git checkout -b feature/YourFeature)
+- Commit your changes (git commit -m 'Add Feature')
+- Push to the branch (git push origin feature/YourFeature)
+- Open a pull request
 
 ### 📄License
 This project is licensed under the MIT License.
