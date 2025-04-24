@@ -28,8 +28,6 @@ A modern, AI-powered resume builder built with **React**, **Vite**, and **TypeSc
 
 ## 📸 Screenshots
 
-> Add your screenshots in the `/public/screenshots/` directory and embed them here:
-
 | Home | Dashboard | Template Preview |
 |------|-----------|------------------|
 | ![Home](public/screenshots/homepage.png) | ![Dashboard](public/screenshots/dashboard.png) | ![Template](public/screenshots/preview.png) |
@@ -43,8 +41,8 @@ A modern, AI-powered resume builder built with **React**, **Vite**, and **TypeSc
 ```bash
 git clone https://github.com/AniketKakde04/ai-resume-builder-frontend.git
 cd ai-resume-builder-frontend
-
-🌐 Live Demo
-Deployed on Vercel
-(https://ai-resume-builder-frontend-xml4-bvhr9ob8l.vercel.app/)
+```
+### 🌐 Live Demo
+- Deployed on Vercel
+- (https://ai-resume-builder-frontend-xml4-bvhr9ob8l.vercel.app/)
 
