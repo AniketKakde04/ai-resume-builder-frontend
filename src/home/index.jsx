@@ -69,10 +69,7 @@ function Home() {
       {/* Footer */}
       <footer className="relative z-10 px-4 py-6 border-t border-white/10 text-center text-sm text-gray-400 mt-12">
         <p>© {new Date().getFullYear()} AI Resume Builder. All rights reserved.</p>
-        <div className="mt-2 space-x-4">
-          <a href="/" className="hover:text-white transition">Privacy Policy</a>
-          <a href="/" className="hover:text-white transition">Terms of Service</a>
-        </div>
+
       </footer>
     </div>
   )
