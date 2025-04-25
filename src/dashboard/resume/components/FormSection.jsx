@@ -70,9 +70,9 @@ function FormSection() {
         ) : activeFormIndex === 5 ? (
           <Projects />
 
-) : activeFormIndex === 7 ? (
+) : activeFormIndex === 6 ? (
   <Skills />
-) : activeFormIndex === 8 ? (
+) : activeFormIndex === 7 ? (
   <Navigate to={`/my-resume/${resumeId}/view`} />
 
         ) : null}
