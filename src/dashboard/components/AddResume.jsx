@@ -58,6 +58,7 @@ function AddResume() {
                 <DialogContent className="backdrop-blur-md bg-white/10 border border-white/20 text-white">
                     <DialogHeader>
                         <DialogTitle>Create New Resume</DialogTitle>
+                        
                         <DialogDescription>
                             <p className="mb-2">Add a title for your new resume</p>
                             <Input
@@ -67,20 +68,24 @@ function AddResume() {
                             />
                         </DialogDescription>
                         <div className="flex justify-end gap-5 mt-4">
-                            <Button variant="ghost" onClick={() => setOpenDialog(false)}>
-                                Cancel
-                            </Button>
-                            <Button
-                                disabled={!resumeTitle || loading}
-                                onClick={onCreate}
-                                className="bg-white text-black hover:bg-gray-100"
-                            >
-                                {loading ? (
-                                    <Loader2 className="animate-spin" />
-                                ) : (
-                                    'Create'
-                                )}
-                            </Button>
+                        <Button
+    variant="ghost"
+    onClick={() => setOpenDialog(false)}
+    className="dialog-button"
+>
+    Cancel
+</Button>
+<Button
+    disabled={!resumeTitle || loading}
+    onClick={onCreate}
+    className="dialog-button"
+>
+    {loading ? (
+        <Loader2 className="animate-spin" />
+    ) : (
+        'Create'
+    )}
+</Button>
                         </div>
                     </DialogHeader>
                 </DialogContent>

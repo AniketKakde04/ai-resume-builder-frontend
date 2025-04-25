@@ -6,6 +6,7 @@ import ExperiencePreview from './preview/ExperiencePreview'
 import EducationalPreview from './preview/EducationalPreview'
 import SkillsPreview from './preview/SkillsPreview'
 import ProjectPreview from './preview/ProjectPreview' // Import ProjectPreview
+import AchievementsPreview from './preview/AchievementsPreview';
 
 function ResumePreview() {
 
@@ -54,6 +55,7 @@ function ResumePreview() {
                 </div>
             )}
 
+          
             {/* Skills */}
             {resumeInfo?.skills?.length > 0 && (
                 <div className="mb-6">

@@ -69,10 +69,12 @@ function FormSection() {
           <Experience />
         ) : activeFormIndex === 5 ? (
           <Projects />
-        ) : activeFormIndex === 6 ? (
-          <Skills />
-        ) : activeFormIndex === 7 ? (
-          <Navigate to={`/my-resume/${resumeId}/view`} />
+
+) : activeFormIndex === 7 ? (
+  <Skills />
+) : activeFormIndex === 8 ? (
+  <Navigate to={`/my-resume/${resumeId}/view`} />
+
         ) : null}
       </div>
     </div>
