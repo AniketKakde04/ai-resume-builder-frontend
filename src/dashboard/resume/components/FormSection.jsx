@@ -69,7 +69,6 @@ function FormSection() {
           <Experience />
         ) : activeFormIndex === 5 ? (
           <Projects />
-
 ) : activeFormIndex === 6 ? (
   <Skills />
 ) : activeFormIndex === 7 ? (

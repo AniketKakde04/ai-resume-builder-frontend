@@ -6,7 +6,6 @@ import ExperiencePreview from './preview/ExperiencePreview'
 import EducationalPreview from './preview/EducationalPreview'
 import SkillsPreview from './preview/SkillsPreview'
 import ProjectPreview from './preview/ProjectPreview' // Import ProjectPreview
-
 function ResumePreview() {
 
     const { resumeInfo, setResumeInfo } = useContext(ResumeInfoContext)
@@ -53,8 +52,6 @@ function ResumePreview() {
                     <ProjectPreview resumeInfo={resumeInfo} />
                 </div>
             )}
-
-          
             {/* Skills */}
             {resumeInfo?.skills?.length > 0 && (
                 <div className="mb-6">
