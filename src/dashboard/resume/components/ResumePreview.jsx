@@ -32,6 +32,12 @@ function ResumePreview() {
       <div className="mb-6">
         <SummaryPreview resumeInfo={resumeInfo} />
       </div>
+  {/* Educational */}
+  {resumeInfo?.education?.length > 0 && (
+        <div className="mb-6">
+          <EducationalPreview resumeInfo={resumeInfo} />
+        </div>
+      )}
 
       {/* Professional Experience */}
       {resumeInfo?.experience?.length > 0 && (
@@ -40,13 +46,7 @@ function ResumePreview() {
         </div>
       )}
 
-      {/* Educational */}
-      {resumeInfo?.education?.length > 0 && (
-        <div className="mb-6">
-          <EducationalPreview resumeInfo={resumeInfo} />
-        </div>
-      )}
-
+    
       {/* Projects */}
       {resumeInfo?.projects?.length > 0 && (
         <div className="mb-6">
