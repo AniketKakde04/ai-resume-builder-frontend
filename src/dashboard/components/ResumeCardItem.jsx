@@ -28,59 +28,88 @@ function ResumeCardItem({ resume, refreshData }) {
   const onDelete = () => {
     setLoading(true);
     GlobalApi.DeleteResumeById(resume.documentId).then(resp => {
-      toast('Resume Deleted!');
+      toast.success('Resume deleted');
       refreshData();
       setLoading(false);
       setOpenAlert(false);
     }, (error) => {
       setLoading(false);
+      toast.error('Deletion failed');
     });
   }
 
   return (
-    <div className="rounded-xl overflow-hidden shadow-md transition hover:shadow-pink-500/20">
+    <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-xl overflow-hidden hover:shadow-lg transition-all">
       <Link to={`/dashboard/resume/${resume.documentId}/edit`}>
-        <div
-          className="h-[280px] p-8 backdrop-blur-md bg-white/10 border border-white/20 rounded-t-xl flex items-center justify-center"
-          style={{ borderTopColor: resume?.themeColor }}
-        >
-          <img src="/cv.png" width={80} height={80} alt="Resume Icon" />
+        <div className="aspect-square flex items-center justify-center p-4 md:p-6">
+          <img 
+            src="/cv.png" 
+            alt="Resume" 
+            className="w-16 h-16 md:w-20 md:h-20 object-contain"
+            style={{ filter: `drop-shadow(0 0 12px ${resume?.themeColor}40)` }}
+          />
         </div>
       </Link>
 
-      <div className="backdrop-blur-md bg-white/10 border border-white/20 p-4 flex justify-between items-center text-white rounded-b-xl">
-        <h2 className="text-sm font-semibold truncate">{resume.title}</h2>
-
+      <div className="p-3 md:p-4 flex items-center justify-between border-t border-white/20">
+        <h3 className="text-sm md:text-base font-medium truncate max-w-[70%]">
+          {resume.title}
+        </h3>
+        
         <DropdownMenu>
-          <DropdownMenuTrigger className="theme-button">
-            <MoreVertical className="h-4 w-4 cursor-pointer" />
+          <DropdownMenuTrigger className="focus:outline-none">
+            <MoreVertical className="h-4 w-4 md:h-5 md:w-5 text-gray-300 hover:text-white" />
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="bg-white/10 backdrop-blur-md border border-white/20 text-white">
-            <DropdownMenuItem onClick={() => navigation(`/dashboard/resume/${resume.documentId}/edit`)}>
+          <DropdownMenuContent className="backdrop-blur-md bg-gray-900/80 border border-white/20 text-white min-w-[140px]">
+            <DropdownMenuItem
+              className="text-sm hover:bg-white/10"
+              onClick={() => navigation(`/dashboard/resume/${resume.documentId}/edit`)}
+            >
               Edit
             </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => navigation(`/my-resume/${resume.documentId}/view`)}>
-              View
+            <DropdownMenuItem
+              className="text-sm hover:bg-white/10"
+              onClick={() => navigation(`/my-resume/${resume.documentId}/view`)}
+            >
+              Preview
             </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => navigation(`/my-resume/${resume.documentId}/view`)}>
+            <DropdownMenuItem
+              className="text-sm hover:bg-white/10"
+              onClick={() => navigation(`/my-resume/${resume.documentId}/download`)}
+            >
               Download
             </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => setOpenAlert(true)}>Delete</DropdownMenuItem>
+            <DropdownMenuItem
+              className="text-sm text-red-300 hover:bg-red-500/20"
+              onClick={() => setOpenAlert(true)}
+            >
+              Delete
+            </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
 
         <AlertDialog open={openAlert}>
-          <AlertDialogContent className="backdrop-blur-md bg-white/10 border border-white/20 text-white">
+          <AlertDialogContent className="backdrop-blur-md bg-gray-900/80 border border-white/20 text-white max-w-[90%] rounded-2xl">
             <AlertDialogHeader>
-              <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
-              <AlertDialogDescription>
-                This action cannot be undone. This will permanently delete your resume.
+              <AlertDialogTitle className="text-base md:text-lg">
+                Confirm Deletion
+              </AlertDialogTitle>
+              <AlertDialogDescription className="text-sm md:text-base">
+                This will permanently delete "{resume.title}". This action cannot be undone.
               </AlertDialogDescription>
             </AlertDialogHeader>
             <AlertDialogFooter>
-              <AlertDialogCancel onClick={() => setOpenAlert(false)}>Cancel</AlertDialogCancel>
-              <AlertDialogAction onClick={onDelete} disabled={loading}>
-                {loading ? <Loader2Icon className="animate-spin" /> : 'Delete'}
+              <AlertDialogCancel className="hover:bg-white/10">
+                Cancel
+              </AlertDialogCancel>
+              <AlertDialogAction 
+                onClick={onDelete} 
+                disabled={loading}
+                className="bg-red-500/20 hover:bg-red-500/30 text-red-300"
+              >
+                {loading ? (
+                  <Loader2Icon className="animate-spin h-4 w-4" />
+                ) : 'Delete'}
               </AlertDialogAction>
             </AlertDialogFooter>
           </AlertDialogContent>

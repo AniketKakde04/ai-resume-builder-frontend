@@ -49,44 +49,41 @@ function AddResume() {
     return (
         <div>
             <div
-                className="h-[280px] p-8 backdrop-blur-md bg-white/10 border border-white/20 rounded-xl flex items-center justify-center text-white cursor-pointer hover:shadow-pink-500/20 transition-all"
+                className="backdrop-blur-md bg-white/10 border border-white/20 rounded-xl h-48 md:h-56 flex items-center justify-center cursor-pointer hover:bg-white/20 transition-all group"
                 onClick={() => setOpenDialog(true)}
             >
-                <PlusSquare className="h-8 w-8" />
+                <PlusSquare className="h-8 w-8 text-gray-300 group-hover:text-white transition-colors" />
             </div>
+            
             <Dialog open={openDialog} onOpenChange={setOpenDialog}>
-                <DialogContent className="backdrop-blur-md bg-white/10 border border-white/20 text-white">
+                <DialogContent className="backdrop-blur-md bg-gray-900/80 border border-white/20 text-white max-w-[95%] md:max-w-md rounded-2xl">
                     <DialogHeader>
-                        <DialogTitle>Create New Resume</DialogTitle>
-                        
-                        <DialogDescription>
-                            <p className="mb-2">Add a title for your new resume</p>
+                        <DialogTitle className="text-lg md:text-xl">New Resume</DialogTitle>
+                        <DialogDescription className="mt-4 space-y-4">
                             <Input
-                                className="my-2 bg-white/20 border-white/30 text-white placeholder:text-gray-300"
-                                placeholder="Ex. Full Stack Resume"
+                                className="backdrop-blur-md bg-white/10 border-white/20 text-white placeholder-gray-400"
+                                placeholder="Enter resume title"
                                 onChange={(e) => setResumeTitle(e.target.value)}
                             />
+                            <div className="flex justify-end gap-3">
+                                <Button 
+                                    variant="ghost"
+                                    onClick={() => setOpenDialog(false)}
+                                    className="hover:bg-white/10"
+                                >
+                                    Cancel
+                                </Button>
+                                <Button
+                                    disabled={!resumeTitle || loading}
+                                    onClick={onCreate}
+                                    className="backdrop-blur-md bg-white/10 hover:bg-white/20"
+                                >
+                                    {loading ? (
+                                        <Loader2 className="animate-spin h-4 w-4 md:h-5 md:w-5" />
+                                    ) : 'Create'}
+                                </Button>
+                            </div>
                         </DialogDescription>
-                        <div className="flex justify-end gap-5 mt-4">
-                        <Button
-    variant="ghost"
-    onClick={() => setOpenDialog(false)}
-    className="dialog-button"
->
-    Cancel
-</Button>
-<Button
-    disabled={!resumeTitle || loading}
-    onClick={onCreate}
-    className="dialog-button"
->
-    {loading ? (
-        <Loader2 className="animate-spin" />
-    ) : (
-        'Create'
-    )}
-</Button>
-                        </div>
                     </DialogHeader>
                 </DialogContent>
             </Dialog>

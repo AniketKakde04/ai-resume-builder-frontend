@@ -1,75 +1,127 @@
 import Header from '@/components/custom/Header'
-import { AtomIcon, Edit, Share2 } from 'lucide-react'
 import React from 'react'
 
 function Home() {
+  const features = [
+    {
+      title: "PDF Export",
+      emoji: "📄",
+      description: "Download polished resumes in professional PDF format"
+    },
+    {
+      title: "Live Editing",
+      emoji: "✍️",
+      description: "Instant preview with real-time content updates"
+    },
+    {
+      title: "Color Customization",
+      emoji: "🎨",
+      description: "Multiple theme colors to match your style"
+    },
+    {
+      title: "AI Suggestions",
+      emoji: "🤖",
+      description: "Smart content recommendations as you type"
+    }
+  ];
+
+  const proFeatures = [
+    {
+      title: "ATS Optimizer",
+      emoji: "🔍",
+      description: "Beat applicant tracking systems with optimized resumes"
+    },
+    {
+      title: "Job Matcher",
+      emoji: "🎯",
+      description: "Automatically tailor resumes to job descriptions"
+    }
+  ];
+
   return (
-    <div className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white min-h-screen">
-      {/* Background Blob Animation */}
-      <div className="absolute -top-20 -left-40 w-[600px] h-[600px] bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse" />
-      <div className="absolute top-40 left-80 w-[500px] h-[500px] bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse animation-delay-1000" />
+    <div className="relative min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
+      {/* Animated Background */}
+      <div className="fixed -top-40 -left-60 w-[800px] h-[800px] bg-blue-300/10 rounded-full mix-blend-screen blur-3xl md:-top-20 md:-left-40" />
 
       <Header />
 
       {/* Hero Section */}
-      <section className="relative z-10 py-12 px-4 mx-auto max-w-screen-xl text-center">
-        <h1 className="text-5xl md:text-6xl font-extrabold leading-tight tracking-tight">
-          Design Smarter <br />
-          <span className="text-pink-500">Resumes with AI</span>
-        </h1>
-        <p className="mt-6 text-lg text-gray-300 max-w-2xl mx-auto">
-          An intelligent resume builder that helps you craft standout resumes in minutes.
-        </p>
-        <div className="mt-8 flex justify-center gap-4">
-          <a
-            href="/dashboard"
-            className="px-8 py-3 bg-white text-black font-semibold rounded-md hover:bg-gray-100 transition"
-          >
-            Get Started
-          </a>
-          <a
-            href="#how-it-works"
-            className="px-8 py-3 border border-white text-white rounded-md hover:bg-white hover:text-black transition"
-          >
-            Learn More
+      <section className="relative px-4 py-12 md:py-24 md:px-6 mx-auto max-w-6xl">
+        <div className="flex flex-col items-center text-center space-y-6 md:space-y-8">
+          <div className="backdrop-blur-md bg-white/10 px-4 py-1.5 md:px-6 md:py-2 rounded-full border border-white/20">
+            <span className="bg-gradient-to-r from-green-400 to-cyan-400 bg-clip-text text-transparent text-sm md:text-base">
+              AI Resume Builder
+            </span>
+          </div>
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent px-4 leading-tight">
+            Build Better Resumes Faster
+          </h1>
+          <p className="text-base md:text-xl text-gray-300 max-w-2xl leading-relaxed">
+            Create professional resumes with powerful free tools, unlock advanced AI features when you need them
+          </p>
+          <a href="/dashboard" className="backdrop-blur-md bg-white/10 border border-white/20 px-6 py-2.5 md:px-8 md:py-3.5 rounded-lg hover:bg-white/20 transition-all text-sm md:text-base">
+            Start Building Free →
           </a>
         </div>
       </section>
 
-      {/* How it Works Section */}
-      <section id="how-it-works" className="relative z-10 py-12 px-4 mx-auto max-w-screen-xl">
-        <h2 className="text-4xl font-bold text-center mb-2">How it Works</h2>
-        <p className="text-gray-400 text-center mb-6">
-          Just 3 simple steps to a perfect resume
-        </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[{
-            icon: <AtomIcon className="h-8 w-8" />,
-            title: "Write a Prompt",
-            text: "Start with a short prompt about your background or job goal."
-          }, {
-            icon: <Edit className="h-8 w-8" />,
-            title: "Customize",
-            text: "Tweak layout, tone, and content to fit your unique style."
-          }, {
-            icon: <Share2 className="h-8 w-8" />,
-            title: "Share or Download",
-            text: "Export your resume and start applying like a pro."
-          }].map((step, idx) => (
-            <div key={idx} className="backdrop-blur-md bg-white/10 border border-white/20 rounded-xl p-4 text-center shadow-md hover:shadow-pink-500/30 transition">
-              <div className="mb-4 text-pink-400 mx-auto">{step.icon}</div>
-              <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
-              <p className="text-gray-300 text-sm">{step.text}</p>
+      {/* Features Grid */}
+      <section className="relative px-4 py-12 md:py-16 md:px-6 mx-auto max-w-7xl">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          {features.map((feature, index) => (
+            <div key={index} className="backdrop-blur-md bg-white/10 border border-white/20 rounded-xl p-4 md:p-6 h-full">
+              <div className="w-10 h-10 md:w-12 md:h-12 bg-white/10 rounded-lg flex items-center justify-center mb-3 md:mb-4 mx-auto">
+                <span className="text-xl md:text-2xl">{feature.emoji}</span>
+              </div>
+              <h3 className="text-lg md:text-xl font-semibold mb-2 text-center md:text-left">
+                {feature.title}
+              </h3>
+              <p className="text-gray-300 text-xs md:text-sm text-center md:text-left">
+                {feature.description}
+              </p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="relative z-10 px-4 py-6 border-t border-white/10 text-center text-sm text-gray-400 mt-12">
-        <p>© {new Date().getFullYear()} AI Resume Builder. All rights reserved.</p>
+      {/* Pro Section */}
+      <section className="relative px-4 py-12 md:py-16 md:px-6 mx-auto max-w-7xl">
+        <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-6 md:p-12">
+          <div className="flex flex-col items-center text-center space-y-6">
+            <div className="bg-purple-500/20 px-3 py-1 rounded-full text-xs md:text-sm">
+              Coming Soon
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold">Pro Features</h2>
+            <p className="text-gray-300 text-sm md:text-base max-w-xl">
+              Advanced tools for professional users
+            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full">
+              {proFeatures.map((feature, index) => (
+                <div key={index} className="backdrop-blur-md bg-white/10 border border-white/20 rounded-lg p-4 md:p-6 h-full">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-3 md:mb-4 mx-auto">
+                    <span className="text-xl md:text-2xl">{feature.emoji}</span>
+                  </div>
+                  <h3 className="text-lg md:text-xl font-semibold mb-2 text-center">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-300 text-xs md:text-sm text-center">
+                    {feature.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
+      {/* Footer */}
+      <footer className="relative px-4 py-8 md:py-12 mt-12 md:mt-24 border-t border-white/20 text-center">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-sm md:text-base text-gray-400">
+            © {new Date().getFullYear()} ResumeCraft. All rights reserved.
+          </p>
+        </div>
       </footer>
     </div>
   )

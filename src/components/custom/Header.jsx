@@ -7,24 +7,31 @@ function Header() {
     const { user, isSignedIn } = useUser();
 
     return (
-        <div className="w-full z-20 bg-gray-900 border-b border-white/20 text-white px-6 py-4 flex justify-between items-center shadow-md">
+        <div className="w-full z-20 bg-gray-900/80 backdrop-blur-md border-b border-white/20 text-white px-4 py-3 md:px-6 md:py-4 flex justify-between items-center shadow-lg">
             <Link to="/">
-                <h2 className="text-2xl font-bold text-white hover:text-yellow-300 transition duration-300">ResumeCraft</h2>
+                <h2 className="text-xl md:text-2xl font-bold text-white hover:text-purple-300 transition-colors">
+                    ResumeCraft
+                </h2>
             </Link>
 
             {isSignedIn ? (
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-2 md:gap-4">
                     <a
                         href="/dashboard"
-                        className="px-8 py-3 bg-white text-black font-semibold rounded-md hover:bg-gray-100 transition"
+                        className="px-4 py-2 md:px-6 md:py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg text-sm md:text-base hover:bg-white/20 transition-all"
                     >
                         Dashboard
                     </a>
-                    <UserButton />
+                    <UserButton appearance={{
+                        elements: {
+                            userButtonTrigger: "h-8 w-8 md:h-10 md:w-10",
+                            userButtonPopoverCard: "backdrop-blur-md bg-gray-900/80 border border-white/20"
+                        }
+                    }} />
                 </div>
             ) : (
                 <Link to="/auth/sign-in">
-                    <Button className="text-white font-semibold rounded-md hover:bg-gray-100 transition">
+                    <Button className="backdrop-blur-md bg-white/10 border border-white/20 hover:bg-white/20 text-sm md:text-base">
                         Get Started
                     </Button>
                 </Link>
