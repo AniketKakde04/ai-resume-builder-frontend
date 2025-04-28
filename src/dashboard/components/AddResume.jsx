@@ -61,7 +61,7 @@ function AddResume() {
                     {/* Single Custom Close Button */}
                     <DialogClose asChild>
                         <Button
-                            className="theme-button absolute right-4 top-4 h-9 w-9 p-2 z-10"
+                            className="theme-button absolute right-4 top-4 h-9 w-9 p-2 z-50"
                             variant="ghost"
                         >
                             <X className="h-5 w-5" />
