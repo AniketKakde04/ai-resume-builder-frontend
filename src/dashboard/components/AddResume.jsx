@@ -56,27 +56,32 @@ function AddResume() {
             </div>
             
             <Dialog open={openDialog} onOpenChange={setOpenDialog}>
-                <DialogContent className="backdrop-blur-md bg-gray-900/80 border border-white/20 text-white max-w-[95%] md:max-w-md rounded-2xl">
+                <DialogContent className="backdrop-blur-md bg-gray-900/80 border border-white/20 text-white max-w-[95%] md:max-w-md rounded-2xl max-h-[90vh] overflow-y-auto">
+                    {/* Close Button (X) */}
+                    <DialogClose className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none">
+                        <X className="h-5 w-5 text-white" />
+                    </DialogClose>
+                    
                     <DialogHeader>
-                        <DialogTitle className="text-lg md:text-xl">New Resume</DialogTitle>
-                        <DialogDescription className="mt-4 space-y-4">
+                        <DialogTitle className="text-lg md:text-xl pr-6">New Resume</DialogTitle>
+                        <DialogDescription className="mt-2 space-y-4">
                             <Input
-                                className="backdrop-blur-md bg-white/10 border-white/20 text-white placeholder-gray-400"
+                                className="backdrop-blur-md bg-white/10 border-white/20 text-white placeholder-gray-400 text-sm md:text-base"
                                 placeholder="Enter resume title"
                                 onChange={(e) => setResumeTitle(e.target.value)}
                             />
-                            <div className="flex justify-end gap-3">
+                            <div className="flex flex-col sm:flex-row justify-end gap-3 pb-4">
                                 <Button 
                                     variant="ghost"
                                     onClick={() => setOpenDialog(false)}
-                                    className="hover:bg-white/10"
+                                    className="hover:bg-white/10 order-2 sm:order-1 w-full sm:w-auto"
                                 >
                                     Cancel
                                 </Button>
                                 <Button
                                     disabled={!resumeTitle || loading}
                                     onClick={onCreate}
-                                    className="backdrop-blur-md bg-white/10 hover:bg-white/20"
+                                    className="backdrop-blur-md bg-white/10 hover:bg-white/20 order-1 sm:order-2 w-full sm:w-auto"
                                 >
                                     {loading ? (
                                         <Loader2 className="animate-spin h-4 w-4 md:h-5 md:w-5" />
