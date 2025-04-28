@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { v4 as uuidv4 } from 'uuid';
 import GlobalApi from '../../../service/GlobalApi';
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 import { useUser } from '@clerk/clerk-react';
 
 function AddResume() {
@@ -69,7 +69,7 @@ function AddResume() {
                                 <Button
                                     disabled={!resumeTitle || loading}
                                     onClick={onCreate}
-                                    className="theme-button w-full sm:w-auto"
+                                    className="bg-gray-900 text-white hover:bg-gray-800 w-full sm:w-auto border border-gray-700"
                                 >
                                     {loading ? (
                                         <Loader2 className="animate-spin h-4 w-4 md:h-5 md:w-5" />
@@ -78,7 +78,7 @@ function AddResume() {
                                 <Button 
                                     variant="outline"
                                     onClick={() => setOpenDialog(false)}
-                                    className="theme-button w-full sm:w-auto"
+                                    className="text-white hover:bg-white/10 w-full sm:w-auto border border-white/20"
                                 >
                                     Cancel
                                 </Button>
