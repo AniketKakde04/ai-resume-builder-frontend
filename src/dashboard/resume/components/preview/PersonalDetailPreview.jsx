@@ -1,26 +1,24 @@
-import React from 'react'
+import React from 'react';
 
 function PersonalDetailPreview({ resumeInfo }) {
   return (
-    <div className="text-center px-2 sm:px-4">
-      <h2 className='font-bold text-xl'
+    <div className="text-center space-y-[1mm] mb-[4mm]">
+      <h1 className="font-bold text-[14pt] print:text-[13pt] leading-none"
         style={{ color: resumeInfo?.themeColor }}>
-        {resumeInfo?.firstName} {resumeInfo?.lastName}
+        {resumeInfo.firstName} {resumeInfo.lastName}
+      </h1>
+      <h2 className="font-medium text-[11pt] print:text-[10.5pt]">
+        {resumeInfo.jobTitle}
       </h2>
-      <h2 className='font-medium text-sm'>{resumeInfo?.jobTitle}</h2>
-      <h2 className='font-normal text-xs'
-        style={{ color: resumeInfo?.themeColor }}>
-        {resumeInfo?.address}
-      </h2>
-
-      <div className='flex flex-col sm:flex-row justify-between gap-1 sm:gap-0 mt-2 text-xs'>
-        <h2 style={{ color: resumeInfo?.themeColor }}>{resumeInfo?.phone}</h2>
-        <h2 style={{ color: resumeInfo?.themeColor }}>{resumeInfo?.email}</h2>
+      <div className="text-[9.5pt] print:text-[9pt] space-y-[0.5mm]">
+        <p>{resumeInfo.address}</p>
+        <div className="flex flex-col sm:flex-row justify-center gap-[2mm]">
+          <span>{resumeInfo.phone}</span>
+          <span>{resumeInfo.email}</span>
+        </div>
       </div>
-
-      <hr className='border-[1.5px] my-2' style={{ borderColor: resumeInfo?.themeColor }} />
     </div>
-  )
+  );
 }
 
-export default PersonalDetailPreview
+export default PersonalDetailPreview;
