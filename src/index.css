@@ -25,20 +25,7 @@
   margin: 0mm;
 }
 
-/* Custom dialog close button styling */
-[data-radix-dialog-content] button[aria-label="Close"] {
-  @apply theme-button;
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
-  padding: 0.25rem;
-  height: auto;
-  width: auto;
-}
 
-[data-radix-dialog-content] button[aria-label="Close"] svg {
-  @apply h-5 w-5;
-}
 @custom-variant dark (&:is(.dark *));
 /* @import "tailwindcss/typography"; */
 .experience-preview ul {
