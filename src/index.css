@@ -2,16 +2,7 @@
 
 @plugin "tailwindcss-animate";
 
-@media print {
-  body { 
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-    background: white !important;
-  }
-  .skill-bar-fill {
-    background-color: var(--theme-color) !important;
-  }
-}
+
 
 @media print{
   #no-print{

@@ -2,34 +2,41 @@ import React from 'react'
 
 function ProjectPreview({ resumeInfo }) {
   return (
-    <div className='mb-4 print:mb-2'>
-      <h2 className='text-center font-semibold text-[11pt] print:text-[10pt] mb-1'
-        style={{ color: resumeInfo?.themeColor }}>
-        PROJECTS
+    <div className='my-6 px-2 sm:px-4'>
+      <h2
+        className='text-center font-bold text-sm mb-2'
+        style={{ color: resumeInfo?.themeColor }}
+      >
+        Projects
       </h2>
-      
-      {resumeInfo?.projects?.map((project, index) => (
-        <div key={index} className='mb-3 print:mb-1'>
-          <div className='flex justify-between items-start'>
-            <h3 className='text-[10pt] print:text-[9.5pt] font-medium'>
-              {project?.projectName}
-            </h3>
+      <hr style={{ borderColor: resumeInfo?.themeColor }} />
+
+      {resumeInfo?.projects.map((project, index) => (
+        <div key={index} className='my-5'>
+          <h2
+            className='text-sm font-bold'
+            style={{ color: resumeInfo?.themeColor }}
+          >
+            {project?.projectName}
+          </h2>
+          <h2 className='text-xs flex flex-col sm:flex-row justify-between'>
+            <span>{project?.technologies}</span>
             {project?.link && (
-              <span className='text-[9pt] print:text-[8.5pt] text-blue-500'>
-                [Link]
-              </span>
+              <a
+                href={project?.link}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='text-blue-500 underline'
+              >
+                View Project
+              </a>
             )}
-          </div>
-          <p className='text-[9pt] print:text-[8.5pt] text-gray-600'>
-            {project?.technologies}
-          </p>
-          <p className='text-[9pt] print:text-[8.5pt] text-gray-600 mt-1 print:mt-0'>
-            {project?.description}
-          </p>
+          </h2>
+          <p className='text-xs my-2 leading-relaxed'>{project?.description}</p>
         </div>
       ))}
     </div>
   )
 }
 
-export default ProjectPreview;
+export default ProjectPreview
