@@ -61,7 +61,7 @@ function AddResume() {
                         <DialogTitle className="text-lg md:text-xl">New Resume</DialogTitle>
                         <DialogDescription className="mt-2 space-y-4">
                             <Input
-                                className="backdrop-blur-md bg-white/10 border-white/20 text-white placeholder-gray-400 text-sm md:text-base"
+                                className="bg-gray-800/20 border-gray-700 text-white placeholder-gray-400 text-sm md:text-base focus:ring-1 focus:ring-white"
                                 placeholder="Enter resume title"
                                 onChange={(e) => setResumeTitle(e.target.value)}
                             />
@@ -69,16 +69,16 @@ function AddResume() {
                                 <Button
                                     disabled={!resumeTitle || loading}
                                     onClick={onCreate}
-                                    className="backdrop-blur-md bg-white/10 hover:bg-white/20 order-1 sm:order-2 w-full sm:w-auto"
+                                    className="bg-white/10 hover:bg-white/20 text-white border border-white/20 w-full sm:w-auto"
                                 >
                                     {loading ? (
                                         <Loader2 className="animate-spin h-4 w-4 md:h-5 md:w-5" />
                                     ) : 'Create'}
                                 </Button>
                                 <Button 
-                                    variant="ghost"
+                                    variant="outline"
                                     onClick={() => setOpenDialog(false)}
-                                    className="hover:bg-white/10 order-2 sm:order-1 w-full sm:w-auto"
+                                    className="bg-transparent hover:bg-white/10 text-white border-white/20 w-full sm:w-auto"
                                 >
                                     Cancel
                                 </Button>
