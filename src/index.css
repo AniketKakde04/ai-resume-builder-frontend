@@ -24,19 +24,7 @@
   size: auto;
   margin: 0mm;
 }
-/* Replace the theme-button CSS block with this */
-.btn-theme {
-  @apply bg-gray-900 text-white border border-gray-700 rounded-lg hover:bg-gray-800 hover:border-gray-600 transition-colors dark:bg-gray-100 dark:text-gray-900 dark:border-gray-300 dark:hover:bg-gray-200;
-}
 
-/* Update the dialog close button styling */
-[data-radix-dialog-content] > button[aria-label="Close"] {
-  @apply btn-theme absolute top-3 right-3 p-2;
-}
-
-[data-radix-dialog-content] > button[aria-label="Close"] svg {
-  @apply h-5 w-5;
-}
 
 @custom-variant dark (&:is(.dark *));
 /* @import "tailwindcss/typography"; */
