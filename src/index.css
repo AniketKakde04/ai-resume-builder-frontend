@@ -24,7 +24,16 @@
   size: auto;
   margin: 0mm;
 }
+/* Style the default dialog close button */
+[data-radix-dialog-content] > button[aria-label="Close"] {
+  @apply theme-button;
+  top: 1rem;
+  right: 1rem;
+}
 
+[data-radix-dialog-content] > button[aria-label="Close"] svg {
+  @apply h-5 w-5;
+}
 
 @custom-variant dark (&:is(.dark *));
 /* @import "tailwindcss/typography"; */

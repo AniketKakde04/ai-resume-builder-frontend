@@ -1,4 +1,4 @@
-import { Loader2, PlusSquare, X } from 'lucide-react';
+import { Loader2, PlusSquare } from 'lucide-react';
 import React, { useState } from 'react';
 import {
     Dialog,
@@ -6,13 +6,12 @@ import {
     DialogDescription,
     DialogHeader,
     DialogTitle,
-    DialogClose,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { v4 as uuidv4 } from 'uuid';
 import GlobalApi from '../../../service/GlobalApi';
-import { useNavigate } from 'react-router-dom'; // Fixed import
+import { useNavigate } from 'react-router';
 import { useUser } from '@clerk/clerk-react';
 
 function AddResume() {
@@ -58,18 +57,8 @@ function AddResume() {
             
             <Dialog open={openDialog} onOpenChange={setOpenDialog}>
                 <DialogContent className="backdrop-blur-md bg-gray-900/80 border border-white/20 text-white max-w-[95%] md:max-w-md rounded-2xl max-h-[90vh] overflow-y-auto">
-                    <DialogClose asChild>
-                        <Button
-                            className="theme-button absolute right-3 top-3 h-8 w-8 p-1.5 z-50 sm:right-4 sm:top-4 sm:h-9 sm:w-9"
-                            variant="ghost"
-                            aria-label="Close"
-                        >
-                            <X className="h-4 w-4 sm:h-5 sm:w-5" />
-                        </Button>
-                    </DialogClose>
-
                     <DialogHeader>
-                        <DialogTitle className="text-lg md:text-xl pr-10">New Resume</DialogTitle>
+                        <DialogTitle className="text-lg md:text-xl">New Resume</DialogTitle>
                         <DialogDescription className="mt-2 space-y-4">
                             <Input
                                 className="bg-gray-800/20 border-gray-700 text-white placeholder-gray-400 text-sm md:text-base focus:ring-1 focus:ring-white"
