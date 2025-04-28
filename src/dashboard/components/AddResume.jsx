@@ -1,4 +1,4 @@
-import { Loader2, PlusSquare } from 'lucide-react';
+import { Loader2, PlusSquare, X } from 'lucide-react';
 import React, { useState } from 'react';
 import {
     Dialog,
@@ -7,7 +7,6 @@ import {
     DialogHeader,
     DialogTitle,
     DialogClose,
-
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -59,7 +58,6 @@ function AddResume() {
             
             <Dialog open={openDialog} onOpenChange={setOpenDialog}>
                 <DialogContent className="backdrop-blur-md bg-gray-900/80 border border-white/20 text-white max-w-[95%] md:max-w-md rounded-2xl max-h-[90vh] overflow-y-auto">
-                    {/* Close Button (X) */}
                     <DialogClose className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none">
                         <X className="h-5 w-5 text-white" />
                     </DialogClose>
@@ -73,13 +71,6 @@ function AddResume() {
                                 onChange={(e) => setResumeTitle(e.target.value)}
                             />
                             <div className="flex flex-col sm:flex-row justify-end gap-3 pb-4">
-                                <Button 
-                                    variant="ghost"
-                                    onClick={() => setOpenDialog(false)}
-                                    className="hover:bg-white/10 order-2 sm:order-1 w-full sm:w-auto"
-                                >
-                                    Cancel
-                                </Button>
                                 <Button
                                     disabled={!resumeTitle || loading}
                                     onClick={onCreate}
@@ -88,6 +79,13 @@ function AddResume() {
                                     {loading ? (
                                         <Loader2 className="animate-spin h-4 w-4 md:h-5 md:w-5" />
                                     ) : 'Create'}
+                                </Button>
+                                <Button 
+                                    variant="ghost"
+                                    onClick={() => setOpenDialog(false)}
+                                    className="hover:bg-white/10 order-2 sm:order-1 w-full sm:w-auto"
+                                >
+                                    Cancel
                                 </Button>
                             </div>
                         </DialogDescription>
