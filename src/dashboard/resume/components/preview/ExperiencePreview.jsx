@@ -1,5 +1,14 @@
 import React from 'react'
 
+const formatDate = (dateString) => {
+  if (!dateString) return '';
+  const date = new Date(dateString);
+  return isNaN(date) ? '' : date.toLocaleDateString('en-US', {
+    month: 'long',
+    year: 'numeric'
+  });
+};
+
 function ExperiencePreview({ resumeInfo }) {
   return (
     <div className='my-6 px-2 sm:px-4'>
@@ -17,7 +26,10 @@ function ExperiencePreview({ resumeInfo }) {
           </h2>
           <h2 className='text-xs flex flex-col sm:flex-row justify-between'>
             <span>{experience?.companyName}, {experience?.city}, {experience?.state}</span>
-            <span>{experience?.startDate} To {experience?.currentlyWorking ? 'Present' : experience?.endDate}</span>
+            <span>
+              {formatDate(experience?.startDate)} To {' '}
+              {experience?.currentlyWorking ? 'Present' : formatDate(experience?.endDate)}
+            </span>
           </h2>
 
           <div
