@@ -2,25 +2,23 @@ import React from 'react'
 
 function PersonalDetailPreview({ resumeInfo }) {
   return (
-    <div className="text-center px-2 sm:px-4">
-      <h2 className='font-bold text-xl'
+    <div className="text-center mb-4 print:mb-2">
+      <h1 className='font-bold text-xl print:text-lg leading-tight'
         style={{ color: resumeInfo?.themeColor }}>
         {resumeInfo?.firstName} {resumeInfo?.lastName}
+      </h1>
+      <h2 className='font-medium text-sm print:text-xs mt-1 print:mt-0'>
+        {resumeInfo?.jobTitle}
       </h2>
-      <h2 className='font-medium text-sm'>{resumeInfo?.jobTitle}</h2>
-      <h2 className='font-normal text-xs'
-        style={{ color: resumeInfo?.themeColor }}>
-        {resumeInfo?.address}
-      </h2>
-
-      <div className='flex flex-col sm:flex-row justify-between gap-1 sm:gap-0 mt-2 text-xs'>
-        <h2 style={{ color: resumeInfo?.themeColor }}>{resumeInfo?.phone}</h2>
-        <h2 style={{ color: resumeInfo?.themeColor }}>{resumeInfo?.email}</h2>
+      <div className='text-xs print:text-[9pt] mt-1 print:mt-0 space-y-0.5'>
+        <p>{resumeInfo?.address}</p>
+        <div className='flex flex-col sm:flex-row justify-center gap-1 print:gap-0.5'>
+          <span>{resumeInfo?.phone}</span>
+          <span>{resumeInfo?.email}</span>
+        </div>
       </div>
-
-      <hr className='border-[1.5px] my-2' style={{ borderColor: resumeInfo?.themeColor }} />
     </div>
   )
 }
 
-export default PersonalDetailPreview
+export default PersonalDetailPreview;

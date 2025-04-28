@@ -2,46 +2,24 @@ import React from 'react'
 
 function SkillsPreview({ resumeInfo }) {
   return (
-    <div className='my-6 px-2 sm:px-4'>
-      <h2
-        className='text-center font-bold text-sm mb-2'
-        style={{
-          color: resumeInfo?.themeColor,
-          printColorAdjust: 'exact',
-          WebkitPrintColorAdjust: 'exact'
-        }}
-      >
-        Skills
+    <div className='mb-4 print:mb-2'>
+      <h2 className='text-center font-semibold text-[11pt] print:text-[10pt] mb-1'
+        style={{ color: resumeInfo?.themeColor }}>
+        SKILLS
       </h2>
-      <hr
-        style={{
-          borderColor: resumeInfo?.themeColor,
-          printColorAdjust: 'exact',
-          WebkitPrintColorAdjust: 'exact'
-        }}
-      />
-
-      <div className='grid grid-cols-1 sm:grid-cols-2 gap-3 my-4'>
-        {resumeInfo?.skills.map((skill, index) => (
+      
+      <div className='grid grid-cols-2 print:grid-cols-1 gap-2 print:gap-1'>
+        {resumeInfo?.skills?.map((skill, index) => (
           <div key={index} className='flex items-center gap-1'>
-            <h2 className='text-xs min-w-[80px]'>{skill.name}</h2>
-            <div
-              className='h-2 w-full rounded-full max-w-[120px]'
-              style={{
-                backgroundColor: '#e5e7eb', // fallback for bg-gray-200
-                printColorAdjust: 'exact',
-                WebkitPrintColorAdjust: 'exact'
-              }}
-            >
-              <div
-                className='h-2 rounded-full'
+            <span className='text-[9pt] print:text-[8.5pt] w-20 print:w-16 truncate'>
+              {skill.name}
+            </span>
+            <div className='flex-1 h-1 print:h-[2px] bg-gray-200 rounded-full'>
+              <div className='h-full rounded-full'
                 style={{
-                  backgroundColor: resumeInfo?.themeColor || '#000',
                   width: `${Math.min(skill?.rating * 20, 100)}%`,
-                  printColorAdjust: 'exact',
-                  WebkitPrintColorAdjust: 'exact'
-                }}
-              />
+                  backgroundColor: resumeInfo?.themeColor
+                }} />
             </div>
           </div>
         ))}
@@ -50,4 +28,4 @@ function SkillsPreview({ resumeInfo }) {
   )
 }
 
-export default SkillsPreview
+export default SkillsPreview;
