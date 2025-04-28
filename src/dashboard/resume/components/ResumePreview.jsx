@@ -12,43 +12,61 @@ function ResumePreview() {
   const { resumeInfo } = useContext(ResumeInfoContext);
 
   return (
-    <div className="p-4 sm:p-6 print:p-[5mm] w-full max-w-[800px] mx-auto bg-white text-[10.5pt] print:text-[10pt]">
-      <style>{`
-        @media print {
-          @page {
-            size: A4 portrait;
-            margin: 15mm 15mm;
-          }
-          .print-section {
-            page-break-inside: avoid;
-            margin-bottom: 6mm;
-          }
-          .print-section:last-child {
-            margin-bottom: 0;
-          }
-        }
-      `}</style>
-
-      <div className="print-section">
+    <div
+      className="shadow-lg h-full p-8 border-t-[15px] 
+                 sm:p-6 md:p-8 lg:p-10 
+                 w-full max-w-[800px] mx-auto 
+                 bg-white text-[10.5pt]
+                 rounded-lg 
+                 overflow-hidden"
+      style={{
+        borderColor: resumeInfo?.themeColor,
+      }}
+    >
+      {/* Personal Detail */}
+      <div className="mb-4">
         <PersonalDetailPreview resumeInfo={resumeInfo} />
-        {resumeInfo?.summary && <SummaryPreview resumeInfo={resumeInfo} />}
       </div>
 
-      <div className="print-section grid grid-cols-1 md:grid-cols-2 print:grid-cols-2 gap-[4mm]">
-        <div className="space-y-[4mm]">
-          {resumeInfo?.education?.length > 0 && <EducationalPreview resumeInfo={resumeInfo} />}
-          {resumeInfo?.skills?.length > 0 && <SkillsPreview resumeInfo={resumeInfo} />}
-        </div>
-        
-        <div className="space-y-[4mm]">
-          {resumeInfo?.experience?.length > 0 && <ExperiencePreview resumeInfo={resumeInfo} />}
-          {resumeInfo?.projects?.length > 0 && <ProjectPreview resumeInfo={resumeInfo} />}
-        </div>
+      {/* Summary */}
+      <div className="mb-4">
+        <SummaryPreview resumeInfo={resumeInfo} />
       </div>
 
-      <div className="print-section">
-        {resumeInfo?.achievements?.length > 0 && <AchievementsPreview resumeInfo={resumeInfo} />}
-      </div>
+      {/* Educational */}
+      {resumeInfo?.education?.length > 0 && (
+        <div className="mb-4">
+          <EducationalPreview resumeInfo={resumeInfo} />
+        </div>
+      )}
+
+      {/* Professional Experience */}
+      {resumeInfo?.experience?.length > 0 && (
+        <div className="mb-4">
+          <ExperiencePreview resumeInfo={resumeInfo} />
+        </div>
+      )}
+
+      {/* Projects */}
+      {resumeInfo?.projects?.length > 0 && (
+        <div className="mb-4">
+          <ProjectPreview resumeInfo={resumeInfo} />
+        </div>
+      )}
+
+      {/* Achievements */}
+      {resumeInfo?.achievements?.length > 0 && (
+        <div className="mb-4">
+          <AchievementsPreview resumeInfo={resumeInfo} />
+        </div>
+      )}
+
+      {/* Skills */}
+      {resumeInfo?.skills?.length > 0 && (
+        <div className="mb-4">
+          <SkillsPreview resumeInfo={resumeInfo} />
+        </div>
+      )}
     </div>
   );
 }

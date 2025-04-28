@@ -11,13 +11,10 @@
   #print{
     display: block;
   }
-  body {
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-    line-height: 1.15 !important;
-  }
-  .skill-bar {
-    height: 1.5mm !important;
+  body{
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
   }
   * {
     -webkit-print-color-adjust: exact;

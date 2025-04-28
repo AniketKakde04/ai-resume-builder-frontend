@@ -1,36 +1,42 @@
-import React from 'react';
+import React from 'react'
 
 function ProjectPreview({ resumeInfo }) {
   return (
-    <div className="space-y-[3mm]">
-      <h2 className="text-center font-bold text-[11pt] print:text-[10.5pt] mb-[1mm]"
-        style={{ color: resumeInfo?.themeColor }}>
-        PROJECTS
+    <div className='my-6 px-2 sm:px-4'>
+      <h2
+        className='text-center font-bold text-sm mb-2'
+        style={{ color: resumeInfo?.themeColor }}
+      >
+        Projects
       </h2>
-      <hr className="border-t-[0.5mm]" style={{ borderColor: resumeInfo?.themeColor }} />
+      <hr style={{ borderColor: resumeInfo?.themeColor }} />
 
-      {resumeInfo?.projects?.map((project, index) => (
-        <div key={index} className="space-y-[1mm]">
-          <div className="flex justify-between items-start">
-            <h3 className="font-semibold text-[10pt] print:text-[9.5pt]">
-              {project.projectName}
-            </h3>
-            {project.link && (
-              <span className="text-[9pt] print:text-[8.5pt] text-blue-600 print:text-black">
-                [Link]
-              </span>
+      {resumeInfo?.projects.map((project, index) => (
+        <div key={index} className='my-5'>
+          <h2
+            className='text-sm font-bold'
+            style={{ color: resumeInfo?.themeColor }}
+          >
+            {project?.projectName}
+          </h2>
+          <h2 className='text-xs flex flex-col sm:flex-row justify-between'>
+            <span>{project?.technologies}</span>
+            {project?.link && (
+              <a
+                href={project?.link}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='text-blue-500 underline'
+              >
+                View Project
+              </a>
             )}
-          </div>
-          <p className="text-[9.5pt] print:text-[9pt] text-gray-600">
-            {project.technologies}
-          </p>
-          <p className="text-[9pt] print:text-[8.5pt] leading-tight">
-            {project.description}
-          </p>
+          </h2>
+          <p className='text-xs my-2 leading-relaxed'>{project?.description}</p>
         </div>
       ))}
     </div>
-  );
+  )
 }
 
-export default ProjectPreview;
+export default ProjectPreview

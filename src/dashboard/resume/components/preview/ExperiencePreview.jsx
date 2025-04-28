@@ -1,41 +1,47 @@
-import React from 'react';
+import React from 'react'
 
 const formatDate = (dateString) => {
+  if (!dateString) return '';
   const date = new Date(dateString);
   return isNaN(date) ? '' : date.toLocaleDateString('en-US', {
-    month: 'short',
+    month: 'long',
     year: 'numeric'
   });
 };
 
 function ExperiencePreview({ resumeInfo }) {
   return (
-    <div className="space-y-[3mm]">
-      <h2 className="text-center font-bold text-[11pt] print:text-[10.5pt] mb-[1mm]"
+    <div className='my-6 px-2 sm:px-4'>
+      <h2 className='text-center font-bold text-sm mb-2'
         style={{ color: resumeInfo?.themeColor }}>
-        EXPERIENCE
+        Professional Experience
       </h2>
-      <hr className="border-t-[0.5mm]" style={{ borderColor: resumeInfo?.themeColor }} />
+      <hr style={{ borderColor: resumeInfo?.themeColor }} />
 
-      {resumeInfo?.experience?.map((exp, index) => (
-        <div key={index} className="space-y-[1mm]">
-          <div className="flex justify-between">
-            <h3 className="font-semibold text-[10pt] print:text-[9.5pt]">
-              {exp.title}
-            </h3>
-            <span className="text-[9pt] print:text-[9pt]">
-              {formatDate(exp.startDate)} - {exp.currentlyWorking ? 'Present' : formatDate(exp.endDate)}
+      {resumeInfo?.experience?.map((experience, index) => (
+        <div key={index} className='my-5'>
+          <h2 className='text-sm font-bold'
+            style={{ color: resumeInfo?.themeColor }}>
+            {experience?.title}
+          </h2>
+          <h2 className='text-xs flex flex-col sm:flex-row justify-between'>
+            <span>{experience?.companyName}, {experience?.city}, {experience?.state}</span>
+            <span>
+              {formatDate(experience?.startDate)} To {' '}
+              {experience?.currentlyWorking ? 'Present' : formatDate(experience?.endDate)}
             </span>
-          </div>
-          <p className="text-[9.5pt] print:text-[9pt] text-gray-600">
-            {exp.companyName}, {exp.city}
-          </p>
-          <div className="text-[9pt] print:text-[8.5pt] leading-tight"
-            dangerouslySetInnerHTML={{ __html: exp.workSummary }} />
+          </h2>
+
+          <div
+            className='text-xs my-2 experience-preview leading-relaxed'
+            dangerouslySetInnerHTML={{
+              __html: experience?.workSummary || ''
+            }}
+          />
         </div>
       ))}
     </div>
-  );
+  )
 }
 
-export default ExperiencePreview;
+export default ExperiencePreview
