@@ -52,7 +52,7 @@ function AddResume() {
                 className="backdrop-blur-md bg-white/10 border border-white/20 rounded-xl h-48 md:h-56 flex items-center justify-center cursor-pointer hover:bg-white/20 transition-all group"
                 onClick={() => setOpenDialog(true)}
             >
-                <PlusSquare className="h-8 w-8 text-gray-300 group-hover:text-white transition-colors" />
+                <PlusSquare className="h-8 w-8 theme-button" />
             </div>
             
             <Dialog open={openDialog} onOpenChange={setOpenDialog}>
@@ -69,7 +69,7 @@ function AddResume() {
                                 <Button
                                     disabled={!resumeTitle || loading}
                                     onClick={onCreate}
-                                    className="bg-white/10 hover:bg-white/20 text-white border border-white/20 w-full sm:w-auto"
+                                    className="theme-button w-full sm:w-auto"
                                 >
                                     {loading ? (
                                         <Loader2 className="animate-spin h-4 w-4 md:h-5 md:w-5" />
@@ -78,7 +78,7 @@ function AddResume() {
                                 <Button 
                                     variant="outline"
                                     onClick={() => setOpenDialog(false)}
-                                    className="bg-transparent hover:bg-white/10 text-white border-white/20 w-full sm:w-auto"
+                                    className="theme-button w-full sm:w-auto"
                                 >
                                     Cancel
                                 </Button>
