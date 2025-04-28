@@ -58,18 +58,18 @@ function AddResume() {
             
             <Dialog open={openDialog} onOpenChange={setOpenDialog}>
                 <DialogContent className="backdrop-blur-md bg-gray-900/80 border border-white/20 text-white max-w-[95%] md:max-w-md rounded-2xl max-h-[90vh] overflow-y-auto">
-                    {/* Custom Close Button */}
+                    {/* Single Custom Close Button */}
                     <DialogClose asChild>
                         <Button
-                            className="theme-button absolute right-4 top-4 h-9 w-9 p-2"
+                            className="theme-button absolute right-4 top-4 h-9 w-9 p-2 z-10"
                             variant="ghost"
                         >
                             <X className="h-5 w-5" />
                         </Button>
                     </DialogClose>
-                    
+
                     <DialogHeader>
-                        <DialogTitle className="text-lg md:text-xl pr-10">New Resume</DialogTitle>
+                        <DialogTitle className="text-lg md:text-xl pr-12">New Resume</DialogTitle>
                         <DialogDescription className="mt-2 space-y-4">
                             <Input
                                 className="bg-gray-800/20 border-gray-700 text-white placeholder-gray-400 text-sm md:text-base focus:ring-1 focus:ring-white"
