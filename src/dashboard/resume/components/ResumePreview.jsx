@@ -12,61 +12,36 @@ function ResumePreview() {
   const { resumeInfo } = useContext(ResumeInfoContext);
 
   return (
-    <div
-      className="shadow-lg h-full p-8 border-t-[15px] 
-                 sm:p-6 md:p-8 lg:p-10 
-                 w-full max-w-[800px] mx-auto 
-                 bg-white text-[10.5pt]
-                 rounded-lg 
-                 overflow-hidden"
-      style={{
-        borderColor: resumeInfo?.themeColor,
-      }}
-    >
-      {/* Personal Detail */}
-      <div className="mb-4">
-        <PersonalDetailPreview resumeInfo={resumeInfo} />
-      </div>
-
-      {/* Summary */}
-      <div className="mb-4">
-        <SummaryPreview resumeInfo={resumeInfo} />
-      </div>
-
-      {/* Educational */}
-      {resumeInfo?.education?.length > 0 && (
-        <div className="mb-4">
-          <EducationalPreview resumeInfo={resumeInfo} />
+    <div className="p-4 sm:p-6 print:p-4 w-full max-w-[800px] mx-auto bg-white text-[11pt]">
+      <PersonalDetailPreview resumeInfo={resumeInfo} />
+      
+      {resumeInfo?.summary && (
+        <div className="mt-4 print:mt-3">
+          <SummaryPreview resumeInfo={resumeInfo} />
         </div>
       )}
 
-      {/* Professional Experience */}
-      {resumeInfo?.experience?.length > 0 && (
-        <div className="mb-4">
+      <div className="space-y-4 print:space-y-3">
+        {resumeInfo?.experience?.length > 0 && (
           <ExperiencePreview resumeInfo={resumeInfo} />
-        </div>
-      )}
-
-      {/* Projects */}
-      {resumeInfo?.projects?.length > 0 && (
-        <div className="mb-4">
+        )}
+        
+        {resumeInfo?.projects?.length > 0 && (
           <ProjectPreview resumeInfo={resumeInfo} />
-        </div>
-      )}
-
-      {/* Achievements */}
-      {resumeInfo?.achievements?.length > 0 && (
-        <div className="mb-4">
-          <AchievementsPreview resumeInfo={resumeInfo} />
-        </div>
-      )}
-
-      {/* Skills */}
-      {resumeInfo?.skills?.length > 0 && (
-        <div className="mb-4">
+        )}
+        
+        {resumeInfo?.education?.length > 0 && (
+          <EducationalPreview resumeInfo={resumeInfo} />
+        )}
+        
+        {resumeInfo?.skills?.length > 0 && (
           <SkillsPreview resumeInfo={resumeInfo} />
-        </div>
-      )}
+        )}
+        
+        {resumeInfo?.achievements?.length > 0 && (
+          <AchievementsPreview resumeInfo={resumeInfo} />
+        )}
+      </div>
     </div>
   );
 }

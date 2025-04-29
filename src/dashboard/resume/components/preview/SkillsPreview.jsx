@@ -1,44 +1,37 @@
-import React from 'react'
+import React from 'react';
 
 function SkillsPreview({ resumeInfo }) {
+  // Group skills by category if available
+  const groupedSkills = resumeInfo?.skills?.reduce((acc, skill) => {
+    const category = skill.category || 'Technical';
+    if (!acc[category]) acc[category] = [];
+    acc[category].push(skill.name);
+    return acc;
+  }, {});
+
   return (
-    <div className='my-4 px-2 sm:px-4'>
-      <h2
-        className='text-center font-bold text-sm mb-2'
-        style={{
-          color: resumeInfo?.themeColor,
-          printColorAdjust: 'exact',
-          WebkitPrintColorAdjust: 'exact'
-        }}
-      >
+    <div className='mt-4 print:mt-3'>
+      <h2 className='font-bold text-sm border-b border-black mb-2'>
         SKILLS
       </h2>
-      <hr
-        style={{
-          borderColor: resumeInfo?.themeColor,
-          printColorAdjust: 'exact',
-          WebkitPrintColorAdjust: 'exact'
-        }}
-      />
-
-      <div className='grid grid-cols-2 md:grid-cols-3 gap-2 mt-3 print:mt-2'>
-        {resumeInfo?.skills?.map((skill, index) => (
-          <div 
-            key={index}
-            className='text-xs px-2 py-1 print:py-0.5 text-center border rounded-sm'
-            style={{
-              borderColor: resumeInfo?.themeColor || '#e5e7eb',
-              color: resumeInfo?.themeColor || '#374151',
-              printColorAdjust: 'exact',
-              WebkitPrintColorAdjust: 'exact'
-            }}
-          >
-            {skill.name}
+      
+      {Object.entries(groupedSkills || {}).map(([category, skills]) => (
+        <div key={category} className="mb-2 print:mb-1">
+          <h3 className="font-medium text-xs print:text-[11pt]">{category}:</h3>
+          <div className="flex flex-wrap gap-1.5 mt-1">
+            {skills.map((skill, index) => (
+              <span 
+                key={index}
+                className="text-xs print:text-[11pt] px-2 py-0.5 bg-gray-100 rounded"
+              >
+                {skill}
+              </span>
+            ))}
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
     </div>
-  )
+  );
 }
 
-export default SkillsPreview
+export default SkillsPreview;

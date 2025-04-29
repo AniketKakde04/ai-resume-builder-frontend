@@ -1,42 +1,30 @@
-import React from 'react'
+import React from 'react';
 
 function ProjectPreview({ resumeInfo }) {
   return (
-    <div className='my-6 px-2 sm:px-4'>
-      <h2
-        className='text-center font-bold text-sm mb-2'
-        style={{ color: resumeInfo?.themeColor }}
-      >
-        Projects
+    <div className='mt-4 print:mt-3'>
+      <h2 className='font-bold text-sm border-b border-black mb-2'>
+        PROJECTS
       </h2>
-      <hr style={{ borderColor: resumeInfo?.themeColor }} />
 
-      {resumeInfo?.projects.map((project, index) => (
-        <div key={index} className='my-5'>
-          <h2
-            className='text-sm font-bold'
-            style={{ color: resumeInfo?.themeColor }}
-          >
+      {resumeInfo?.projects?.map((project, index) => (
+        <div key={index} className="mb-3 print:mb-2">
+          <h3 className="font-medium text-xs print:text-[11pt]">
             {project?.projectName}
-          </h2>
-          <h2 className='text-xs flex flex-col sm:flex-row justify-between'>
-            <span>{project?.technologies}</span>
+          </h3>
+          <div className="text-xs print:text-[11pt] text-gray-600">
+            {project?.technologies}
             {project?.link && (
-              <a
-                href={project?.link}
-                target='_blank'
-                rel='noopener noreferrer'
-                className='text-blue-500 underline'
-              >
-                View Project
-              </a>
+              <span className="ml-2">[Project URL]</span>
             )}
-          </h2>
-          <p className='text-xs my-2 leading-relaxed'>{project?.description}</p>
+          </div>
+          <p className="text-xs print:text-[11pt] mt-1">
+            {project?.description}
+          </p>
         </div>
       ))}
     </div>
-  )
+  );
 }
 
-export default ProjectPreview
+export default ProjectPreview;
