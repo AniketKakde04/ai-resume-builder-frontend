@@ -1,42 +1,42 @@
-import React from 'react';
+import React from 'react'
 
 const formatDate = (dateString) => {
+  if (!dateString) return '';
   const date = new Date(dateString);
   return isNaN(date) ? '' : date.toLocaleDateString('en-US', {
-    month: 'short', 
+    month: 'long',
     year: 'numeric'
   });
 };
 
 function EducationalPreview({ resumeInfo }) {
   return (
-    <div className='mt-4 print:mt-3'>
-      <h2 className='font-bold text-sm border-b border-black mb-2'>
-        EDUCATION
+    <div className='my-6 px-2 sm:px-4'>
+      <h2 className='text-center font-bold text-sm mb-2'
+        style={{ color: resumeInfo?.themeColor }}>
+        Education
       </h2>
-      
-      {resumeInfo?.education?.map((edu, index) => (
-        <div key={index} className="mb-3 print:mb-2">
-          <div className="flex justify-between">
-            <h3 className="font-medium text-xs print:text-[11pt]">
-              {edu.universityName}
-            </h3>
-            <span className="text-xs print:text-[11pt]">
-              {formatDate(edu.startDate)} - {formatDate(edu.endDate)}
+      <hr style={{ borderColor: resumeInfo?.themeColor }} />
+
+      {resumeInfo?.education?.map((education, index) => (
+        <div key={index} className='my-5'>
+          <h2 className='text-sm font-bold'
+            style={{ color: resumeInfo?.themeColor }}>
+            {education?.universityName}
+          </h2>
+          <h2 className='text-xs flex flex-col sm:flex-row justify-between'>
+            <span>{education?.degree} {education?.major}</span>
+            <span>
+              {formatDate(education?.startDate)} - {formatDate(education?.endDate)}
             </span>
-          </div>
-          <p className="text-xs print:text-[11pt] text-gray-600">
-            {edu.degree} {edu.major}
+          </h2>
+          <p className='text-xs my-2 leading-relaxed'>
+            {education?.description}
           </p>
-          {edu.description && (
-            <p className="text-xs print:text-[11pt] mt-1">
-              {edu.description}
-            </p>
-          )}
         </div>
       ))}
     </div>
-  );
+  )
 }
 
-export default EducationalPreview;
+export default EducationalPreview
