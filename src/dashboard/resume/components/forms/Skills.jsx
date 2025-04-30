@@ -72,13 +72,7 @@ function Skills() {
               onChange={(e) => handleChange(index, 'name', e.target.value)}
             />
           </div>
-          <div className="flex-shrink-0">
-            <Rating
-              style={{ maxWidth: 120 }}
-              value={item.rating || 0}
-              onChange={(v) => handleChange(index, 'rating', v)}
-            />
-          </div>
+      
         </div>
       ))}
 

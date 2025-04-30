@@ -21,6 +21,35 @@
     print-color-adjust: exact;
   }
 }
+/* index.css additions */
+@layer utilities {
+  .border-b-2 {
+    border-bottom-width: 2px;
+  }
+  
+  .text-gray-600 {
+    color: #4b5563;
+  }
+
+  .space-y-1 > * + * {
+    margin-top: 0.25rem;
+  }
+}
+
+@media print {
+  .text-gray-600 {
+    color: #6b7280;
+  }
+  
+  .text-blue-600 {
+    color: #1a0dab;
+    text-decoration: underline;
+  }
+  
+  .border-b-2 {
+    border-bottom-width: 1.5px;
+  }
+}
 
 @page{
   size: auto;

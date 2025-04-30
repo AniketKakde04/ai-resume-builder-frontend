@@ -67,6 +67,26 @@ function PersonalDetail({ enabledNext }) {
             <label className="text-sm">Email</label>
             <Input name="email" defaultValue={resumeInfo?.email} required onChange={handleInputChange} className="w-full" />
           </div>
+          <div className="sm:col-span-2">
+            <label className="text-sm">LinkedIn URL</label>
+            <Input 
+              name="linkedin" 
+              defaultValue={resumeInfo?.linkedin} 
+              onChange={handleInputChange} 
+              className="w-full"
+              placeholder="https://linkedin.com/in/username"
+            />
+          </div>
+          <div className="sm:col-span-2">
+            <label className="text-sm">GitHub URL</label>
+            <Input 
+              name="github" 
+              defaultValue={resumeInfo?.github} 
+              onChange={handleInputChange} 
+              className="w-full"
+              placeholder="https://github.com/username"
+            />
+          </div>
         </div>
         <div className="mt-4 flex justify-end">
           <Button type="submit" className="theme-button" disabled={loading}>
