@@ -59,7 +59,7 @@ function Home() {
           <p className="text-base md:text-xl text-gray-300 max-w-2xl leading-relaxed">
             Create professional resumes with powerful free tools, unlock advanced AI features when you need them
           </p>
-          <a href="/dashboard" className="backdrop-blur-md bg-white/10 border border-white/20 px-6 py-2.5 md:px-8 md:py-3.5 rounded-lg hover:bg-white/20 transition-all text-sm md:text-base">
+          <a href="/dashboard" className="backdrop-blur-md bg-white/10 border border-white/20 px-6 py-2.5 md:px-8 md:py-3.5 rounded-lg hover:bg-white/20 transition-all text-sm md:text-base " style={{ color:"white" }}>
             Start Building Free →
           </a>
         </div>

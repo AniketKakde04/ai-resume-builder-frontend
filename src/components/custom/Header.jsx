@@ -19,6 +19,8 @@ function Header() {
                     <a
                         href="/dashboard"
                         className="px-4 py-2 md:px-6 md:py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg text-sm md:text-base hover:bg-white/20 transition-all"
+                    
+                        style={{ color:"white" }}
                     >
                         Dashboard
                     </a>
