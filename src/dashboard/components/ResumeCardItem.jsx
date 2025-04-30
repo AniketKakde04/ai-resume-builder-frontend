@@ -74,12 +74,6 @@ function ResumeCardItem({ resume, refreshData }) {
               Preview
             </DropdownMenuItem>
             <DropdownMenuItem
-              className="text-sm hover:bg-white/10"
-              onClick={() => navigation(`/my-resume/${resume.documentId}/download`)}
-            >
-              Download
-            </DropdownMenuItem>
-            <DropdownMenuItem
               className="text-sm text-red-300 hover:bg-red-500/20"
               onClick={() => setOpenAlert(true)}
             >
@@ -88,7 +82,7 @@ function ResumeCardItem({ resume, refreshData }) {
           </DropdownMenuContent>
         </DropdownMenu>
 
-        <AlertDialog open={openAlert}>
+        <AlertDialog open={openAlert} onOpenChange={setOpenAlert}>
           <AlertDialogContent className="backdrop-blur-md bg-gray-900/80 border border-white/20 text-white max-w-[90%] rounded-2xl">
             <AlertDialogHeader>
               <AlertDialogTitle className="text-base md:text-lg">
@@ -99,7 +93,10 @@ function ResumeCardItem({ resume, refreshData }) {
               </AlertDialogDescription>
             </AlertDialogHeader>
             <AlertDialogFooter>
-              <AlertDialogCancel className="hover:bg-white/10">
+              <AlertDialogCancel 
+                className="hover:bg-white/10"
+                onClick={() => setOpenAlert(false)}
+              >
                 Cancel
               </AlertDialogCancel>
               <AlertDialogAction 
