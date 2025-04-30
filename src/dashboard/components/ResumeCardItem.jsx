@@ -94,7 +94,7 @@ function ResumeCardItem({ resume, refreshData }) {
             </AlertDialogHeader>
             <AlertDialogFooter>
               <AlertDialogCancel 
-                className="hover:bg-white/10"
+                className="hover:bg-white/10 text-black"
                 onClick={() => setOpenAlert(false)}
               >
                 Cancel
