@@ -3,30 +3,34 @@ import React from 'react'
 
 function SkillsPreview({ resumeInfo }) {
   return (
-    <div className='my-4 px-2 sm:px-4 print:my-2'>
+    <div className='my-6 px-2 sm:px-4 print:my-4'>
+      <div className='mb-4 print:mb-3'>
       <h2
-        className='text-center font-bold text-sm mb-2 print:mb-1 print:text-[11pt]'
-        style={{ color: resumeInfo?.themeColor || '#000000' }}
+        className='text-center font-bold text-sm mb-2 print:mb-1'
+        style={{ color: resumeInfo?.themeColor }}
       >
         Skills
       </h2>
-      <hr style={{ 
-        borderColor: resumeInfo?.themeColor || '#000000',
-        backgroundColor: resumeInfo?.themeColor || '#000000'
-      }} />
+        <hr style={{ borderColor: resumeInfo?.themeColor }} />
+        </div>
 
-      <div className='grid grid-cols-2 md:grid-cols-3 gap-2 mt-2 print:mt-1'>
+      <div className='flex flex-wrap justify-center gap-x-6 gap-y-2 print:gap-x-4'>
         {resumeInfo?.skills?.map((skill, index) => (
           <div 
             key={index}
-            className='text-xs px-2 py-1 text-center border rounded-sm 
-                       print:text-[9pt] print:py-0.5 print:border-[0.5px]'
-            style={{ 
-              borderColor: resumeInfo?.themeColor || '#e5e7eb',
-              color: resumeInfo?.themeColor || '#374151'
-            }}
+            className='relative text-sm print:text-[10pt] text-gray-700 print:text-gray-800'
           >
-            {skill.name}
+            <span className='font-medium' style={{ color: resumeInfo?.themeColor || '#2d3748' }}>
+              {skill.name}
+            </span>
+            {index < resumeInfo.skills.length - 1 && (
+              <span 
+                className='absolute -right-3.5 top-1/2 transform -translate-y-1/2 text-gray-400 print:text-gray-500'
+                style={{ color: resumeInfo?.themeColor ? `${resumeInfo.themeColor}80` : '#a0aec0' }}
+              >
+                |
+              </span>
+            )}
           </div>
         ))}
       </div>
@@ -34,4 +38,4 @@ function SkillsPreview({ resumeInfo }) {
   )
 }
 
-export default SkillsPreview;
+export default SkillsPreview

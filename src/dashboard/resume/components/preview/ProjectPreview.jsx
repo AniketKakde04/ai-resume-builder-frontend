@@ -3,7 +3,7 @@ import React from 'react'
 
 function ProjectPreview({ resumeInfo }) {
   return (
-    <div className='my-6 px-2 sm:px-4 print:my-4'>
+    <div className='my-4 px-2 sm:px-4 print:my-2'>
       <h2
         className='text-center font-bold text-sm mb-2 print:mb-1'
         style={{ color: resumeInfo?.themeColor }}
