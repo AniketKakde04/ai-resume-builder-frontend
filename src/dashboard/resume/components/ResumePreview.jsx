@@ -1,4 +1,3 @@
-// ResumePreview.jsx
 import { ResumeInfoContext } from '@/context/ResumeInfoContext';
 import React, { useContext } from 'react';
 import PersonalDetailPreview from './preview/PersonalDetailPreview';
@@ -30,7 +29,7 @@ function ResumePreview() {
           @media print {
             @page {
               size: A4;
-              margin: 15mm 5mm;
+              margin: 5mm 5mm;
               marks: none;
               @top-left { content: none; }
               @top-right { content: none; }
@@ -48,7 +47,7 @@ function ResumePreview() {
         `}
       </style>
 
-      <div className="print:mx-4 print:my-0 print:pt-2">
+      <div className="print:mx-4 print:my-0 print:pt-1">
         <div className="mb-2 avoid-break">
           <PersonalDetailPreview resumeInfo={resumeInfo} />
         </div>
