@@ -36,8 +36,7 @@ function PersonalDetailPreview({ resumeInfo }) {
               href={formatUrl(resumeInfo.linkedin)}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:underline"
-              style={{ color: resumeInfo?.themeColor || '#000000' }}
+               className="'text-blue-500 underline print:text-black"
             >
               LinkedIn Profile
             </a>
@@ -47,8 +46,8 @@ function PersonalDetailPreview({ resumeInfo }) {
               href={formatUrl(resumeInfo.github)}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:underline"
-              style={{ color: resumeInfo?.themeColor || '#000000' }}
+              className="'text-blue-500 underline print:text-black"
+              
             >
               GitHub Profile
             </a>
