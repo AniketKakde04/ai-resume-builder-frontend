@@ -57,9 +57,14 @@ function ResumeCardItem({ resume, refreshData }) {
         </h3>
         
         <DropdownMenu>
-          <DropdownMenuTrigger className="focus:outline-none">
-            <MoreVertical className="h-4 w-4 md:h-5 md:w-5 text-black hover:text-white" />
-          </DropdownMenuTrigger>
+        <DropdownMenuTrigger asChild>
+  <div className="bg-white p-1.5 rounded-md hover:bg-gray-200 transition-colors cursor-pointer">
+    <MoreVertical className="h-4 w-4 md:h-5 md:w-5 text-black" />
+  </div>
+</DropdownMenuTrigger>
+
+
+
           <DropdownMenuContent className="backdrop-blur-md bg-gray-900/80 border border-white/20 text-white min-w-[140px]">
             <DropdownMenuItem
               className="text-sm hover:bg-white/10"
