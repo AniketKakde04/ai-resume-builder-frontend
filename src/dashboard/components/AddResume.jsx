@@ -56,7 +56,7 @@ function AddResume() {
             </div>
             
             <Dialog open={openDialog} onOpenChange={setOpenDialog}>
-                <DialogContent className="backdrop-blur-md bg-gray-900/80 border border-white/20 text-white max-w-[95%] md:max-w-md rounded-2xl max-h-[90vh] overflow-y-auto">
+                <DialogContent hideCloseIcon className="backdrop-blur-md bg-gray-900/80 border border-white/20 text-white max-w-[95%] md:max-w-md rounded-2xl max-h-[90vh] overflow-y-auto">
                     <DialogHeader>
                         <DialogTitle className="text-lg md:text-xl pr-8">New Resume</DialogTitle>
                         <DialogDescription className="mt-2 space-y-4">
