@@ -33,7 +33,7 @@ function Header() {
                 </div>
             ) : (
                 <Link to="/auth/sign-in">
-                    <Button className="backdrop-blur-md bg-white/10 border text-white border-white/20 hover:bg-white/20 text-sm md:text-base">
+                    <Button className="backdrop-blur-md bg-white/10 border text-black border-white/20 hover:bg-white/20 text-sm md:text-base">
                         Get Started
                     </Button>
                 </Link>
