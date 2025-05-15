@@ -149,7 +149,7 @@ function Analysis({ compact = false }) {
                     <p className="text-xs text-muted-foreground">{kw.placement}</p>
                   </div>
                   <span className="text-sm font-medium text-blue-600">
-                    Score: {kw.score}
+                    Score: {kw.score}/10
                   </span>
                 </div>
               ))}
