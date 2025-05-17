@@ -15,7 +15,7 @@ export default function AnalysisPanel({ show, onClose }) {
           <Button 
             variant="ghost" 
             onClick={onClose} 
-            className="hover:bg-muted rounded-full"
+            className="hover:bg-muted rounded-full theme-button"
             aria-label="Close analysis panel"
           >
             <X size={18} />

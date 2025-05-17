@@ -30,7 +30,7 @@ function EditResume() {
         <div className="fixed bottom-8 right-8 z-50">
           <Button 
             onClick={() => setShowAnalysis(!showAnalysis)}
-            className="shadow-lg flex gap-2 items-center "
+            className="shadow-lg flex gap-2 items-center theme-button p-4 rounded-full"
           >
             <BarChart size={18} />
             {showAnalysis ? 'Hide Insights' : 'Show Analysis'}
