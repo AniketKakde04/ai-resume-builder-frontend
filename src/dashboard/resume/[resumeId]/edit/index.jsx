@@ -9,26 +9,28 @@ import { BarChart } from 'lucide-react';
 import AnalysisPanel from '../../components/preview/AnalysisPanel';
 
 function EditResume() {
-    const {resumeId}=useParams();
-    const [resumeInfo,setResumeInfo]=useState();
-    const [showAnalysis, setShowAnalysis] = useState(false);
+  const { resumeId } = useParams();
+  const [resumeInfo, setResumeInfo] = useState();
+  const [showAnalysis, setShowAnalysis] = useState(false);
 
-    useEffect(()=>{
-        GetResumeInfo();
-    },[])
+  useEffect(() => {
+    GetResumeInfo();
+  }, [])
 
-    const GetResumeInfo=()=>{
-        GlobalApi.GetResumeById(resumeId).then(resp=>{
-          setResumeInfo(resp.data.data);
-        })
-    }
+
+
+  const GetResumeInfo = () => {
+    GlobalApi.GetResumeById(resumeId).then(resp => {
+      setResumeInfo(resp.data.data);
+    })
+  }
 
   return (
-    <ResumeInfoContext.Provider value={{resumeInfo,setResumeInfo}}>
+    <ResumeInfoContext.Provider value={{ resumeInfo, setResumeInfo }}>
       <div className='relative'>
         {/* Floating Analysis Toggle */}
         <div className="fixed bottom-8 right-8 z-50">
-          <Button 
+          <Button
             onClick={() => setShowAnalysis(!showAnalysis)}
             className="shadow-lg flex gap-2 items-center theme-button p-4 rounded-full"
           >
@@ -40,12 +42,14 @@ function EditResume() {
         {/* Main Content */}
         <div className={`grid grid-cols-1 md:grid-cols-2 p-10 gap-10 transition-margin duration-300
           ${showAnalysis ? 'mr-[400px] lg:mr-[500px]' : ''}`}>
-          <FormSection/>
-          <ResumePreview/>
+          {/* Left: FormSection with preview switcher buttons */}
+          <FormSection />
+          {/* Right: Resume Preview */}
+          <ResumePreview />
         </div>
 
         {/* Analysis Panel */}
-        <AnalysisPanel show={showAnalysis} onClose={() => setShowAnalysis(false)}/>
+        <AnalysisPanel show={showAnalysis} onClose={() => setShowAnalysis(false)} />
       </div>
     </ResumeInfoContext.Provider>
   )

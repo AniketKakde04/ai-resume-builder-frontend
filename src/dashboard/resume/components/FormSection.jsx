@@ -20,8 +20,8 @@ function FormSection() {
     <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white p-4 sm:p-6">
       {/* Top Controls */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
-        {/* Left Side: Home + Theme Toggle */}
-        <div className="flex gap-3">
+        {/* Left Side: Home + Theme Toggle + Preview Toggle */}
+        <div className="flex gap-3 items-center">
           <Link to="/dashboard">
             <Button className="theme-button">
               <Home className="w-4 h-4" />
@@ -44,20 +44,19 @@ function FormSection() {
           <Button
             disabled={!enableNext}
             size="sm"
-            className={`theme-button ${
-              enableNext
-                ? 'bg-pink-600 hover:bg-pink-700'
-                : 'bg-gray-500 cursor-not-allowed'
-            }`}
+            className={`theme-button ${enableNext
+              ? 'bg-pink-600 hover:bg-pink-700'
+              : 'bg-gray-500 cursor-not-allowed'
+              }`}
             onClick={() => setActiveFormIndex(activeFormIndex + 1)}
           >
             Next <ArrowRight className="w-4 h-4" />
           </Button>
         </div>
-      </div>
+      </div >
 
       {/* Form Content */}
-      <div>
+      < div >
         {activeFormIndex === 1 ? (
           <PersonalDetail enabledNext={(v) => setEnableNext(v)} />
         ) : activeFormIndex === 2 ? (
@@ -69,14 +68,14 @@ function FormSection() {
         ) : activeFormIndex === 5 ? (
           <Projects />
         ) : activeFormIndex === 6 ? (
-          <Achievements /> 
+          <Achievements />
         ) : activeFormIndex === 7 ? (
           <Skills />
         ) : activeFormIndex === 8 ? (
           <Navigate to={`/my-resume/${resumeId}/view`} />
         ) : null}
-      </div>
-    </div>
+      </div >
+    </div >
   );
 }
 

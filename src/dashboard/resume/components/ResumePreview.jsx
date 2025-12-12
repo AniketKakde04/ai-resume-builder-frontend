@@ -8,18 +8,22 @@ import SkillsPreview from './preview/SkillsPreview';
 import ProjectPreview from './preview/ProjectPreview';
 import AchievementsPreview from './preview/AchievementsPreview';
 
-function ResumePreview() {
+// Accept previewType as a prop
+function ResumePreview({ previewType = 'default' }) {
   const { resumeInfo } = useContext(ResumeInfoContext);
+
+  // Example: alternate style for 'alt' previewType
+  const altStyle = previewType === 'alt';
 
   return (
     <div
-      className="shadow-lg h-full p-8 border-t-[15px] 
+      className={`shadow-lg h-full p-8 border-t-[15px] 
                  sm:p-6 md:p-8 lg:p-10 
                  w-full max-w-[900px] mx-auto 
-                 bg-white text-[10.5pt]
+                 ${altStyle ? 'bg-gray-100 text-blue-900' : 'bg-white text-[10.5pt]'}
                  rounded-lg overflow-hidden
                  print:p-0 print:shadow-none
-                 print:min-h-[1123px]"
+                 print:min-h-[1123px]`}
       style={{
         borderColor: resumeInfo?.themeColor || '#000000',
       }}
@@ -49,7 +53,8 @@ function ResumePreview() {
 
       <div className="print:mx-4 print:my-0 print:pt-1">
         <div className="mb-2 avoid-break">
-          <PersonalDetailPreview resumeInfo={resumeInfo} />
+          {/* Pass previewType to preview components if needed for more customization */}
+          <PersonalDetailPreview resumeInfo={resumeInfo} previewType={previewType} />
         </div>
 
         {resumeInfo?.summary && (
@@ -63,6 +68,14 @@ function ResumePreview() {
             <EducationalPreview resumeInfo={resumeInfo} />
           </div>
         )}
+
+        {resumeInfo?.skills?.length > 0 && (
+          <div className="mb-2 avoid-break">
+            <SkillsPreview resumeInfo={resumeInfo} />
+          </div>
+        )}
+
+
 
         {resumeInfo?.experience?.length > 0 && (
           <div className="mb-2 avoid-break">
@@ -82,11 +95,7 @@ function ResumePreview() {
           </div>
         )}
 
-        {resumeInfo?.skills?.length > 0 && (
-          <div className="mb-2 avoid-break">
-            <SkillsPreview resumeInfo={resumeInfo} />
-          </div>
-        )}
+
       </div>
     </div>
   );
