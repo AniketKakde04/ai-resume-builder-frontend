@@ -69,12 +69,6 @@ function ResumePreview({ previewType = 'default' }) {
           </div>
         )}
 
-        {resumeInfo?.skills?.length > 0 && (
-          <div className="mb-2 avoid-break">
-            <SkillsPreview resumeInfo={resumeInfo} />
-          </div>
-        )}
-
 
 
         {resumeInfo?.experience?.length > 0 && (
@@ -95,6 +89,11 @@ function ResumePreview({ previewType = 'default' }) {
           </div>
         )}
 
+        {resumeInfo?.skills?.length > 0 && (
+          <div className="mb-2 avoid-break">
+            <SkillsPreview resumeInfo={resumeInfo} />
+          </div>
+        )}
 
       </div>
     </div>
