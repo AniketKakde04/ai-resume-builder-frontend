@@ -64,13 +64,13 @@ function FormSection() {
         ) : activeFormIndex === 3 ? (
           <Education />
         ) : activeFormIndex === 4 ? (
-          <Experience />
-        ) : activeFormIndex === 5 ? (
-          <Projects />
-        ) : activeFormIndex === 6 ? (
-          <Achievements />
-        ) : activeFormIndex === 7 ? (
           <Skills />
+        ) : activeFormIndex === 5 ? (
+          <Experience />
+        ) : activeFormIndex === 6 ? (
+          <Projects />
+        ) : activeFormIndex === 7 ? (
+          <Achievements />
         ) : activeFormIndex === 8 ? (
           <Navigate to={`/my-resume/${resumeId}/view`} />
         ) : null}
